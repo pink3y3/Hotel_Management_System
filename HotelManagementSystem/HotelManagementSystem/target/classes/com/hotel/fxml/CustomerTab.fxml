@@ -4,67 +4,106 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<!--
-  CustomerTab.fxml  —  Customers tab content
-  Controller: CustomerController
+<VBox spacing="20"
+      xmlns="http://javafx.com/javafx/17.0.12"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.hotel.controller.CustomerController"
+      style="-fx-background-color: #121212; -fx-padding: 24;">
 
-  KEY FEATURE: DatePicker (fx:id="dobPicker") for Date of Birth selection.
-  Validation is handled in CustomerController.handleAddCustomer():
-    - DOB must not be null
-    - DOB must not be in the future
--->
+    <!-- ── Add Customer ───────────────────────── -->
+    <VBox spacing="16"
+          style="-fx-background-color: #1c1c1c; -fx-padding: 16; -fx-border-color: #333;">
 
-<VBox spacing="16" styleClass="tab-content" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="com.hotel.controller.CustomerController">
-    <padding><Insets bottom="20" left="20" right="20" top="20" /></padding>
-
-    <!-- ── Add Customer Form ─────────────────────────────────────── -->
-    <VBox spacing="14" styleClass="card">
-        <Label styleClass="card-title" text="Add New Customer" />
+        <Label text="Add New Customer"
+               style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
 
         <GridPane hgap="16" vgap="12">
+
             <columnConstraints>
-                <ColumnConstraints minWidth="130" prefWidth="150" />
-                <ColumnConstraints hgrow="ALWAYS" />
-                <ColumnConstraints minWidth="130" prefWidth="150" />
-                <ColumnConstraints hgrow="ALWAYS" />
+                <ColumnConstraints prefWidth="150"/>
+                <ColumnConstraints hgrow="ALWAYS"/>
+                <ColumnConstraints prefWidth="150"/>
+                <ColumnConstraints hgrow="ALWAYS"/>
             </columnConstraints>
 
             <!-- Row 0 -->
-            <Label styleClass="field-label" text="Full Name" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-            <TextField fx:id="customerNameField" promptText="e.g. Rahul Sharma" styleClass="text-field-styled" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <Label text="Full Name"
+                   style="-fx-text-fill: white;"
+                   GridPane.rowIndex="0"/>
 
-            <Label styleClass="field-label" text="Contact Number" GridPane.columnIndex="2" GridPane.rowIndex="0" />
-            <TextField fx:id="contactNumberField" promptText="e.g. 9876543210" styleClass="text-field-styled" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+            <TextField fx:id="customerNameField"
+                       promptText="e.g. Rahul Sharma"
+                       style="-fx-background-color: #1e1e1e; -fx-text-fill: white;"
+                       GridPane.columnIndex="1"
+                       GridPane.rowIndex="0"/>
+
+            <Label text="Contact Number"
+                   style="-fx-text-fill: white;"
+                   GridPane.columnIndex="2"
+                   GridPane.rowIndex="0"/>
+
+            <TextField fx:id="contactNumberField"
+                       promptText="e.g. 9876543210"
+                       style="-fx-background-color: #1e1e1e; -fx-text-fill: white;"
+                       GridPane.columnIndex="3"
+                       GridPane.rowIndex="0"/>
 
             <!-- Row 1 -->
-            <Label styleClass="field-label" text="Date of Birth" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-            <DatePicker fx:id="dobPicker" maxWidth="Infinity" promptText="Select date of birth" styleClass="date-picker-styled" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-         <rowConstraints>
-            <RowConstraints />
-            <RowConstraints />
-         </rowConstraints>
+            <Label text="Date of Birth"
+                   style="-fx-text-fill: white;"
+                   GridPane.rowIndex="1"/>
+
+            <DatePicker fx:id="dobPicker"
+                        maxWidth="Infinity"
+                        promptText="Select date of birth"
+                        style="-fx-background-color: #1e1e1e;"
+                        GridPane.columnIndex="1"
+                        GridPane.rowIndex="1"/>
+
         </GridPane>
 
-        <HBox spacing="10">
-            <Button onAction="#handleAddCustomer" style="-fx-background-color: #C6A75EFF;" styleClass="btn-primary" text="➕  Add Customer" textFill="WHITE" />
+        <HBox spacing="12">
+            <Button text="➕ Add Customer"
+                    onAction="#handleAddCustomer"
+                    style="-fx-background-color: #c6a75e; -fx-text-fill: black;"/>
         </HBox>
+
     </VBox>
 
-    <!-- ── Search bar ────────────────────────────────────────────── -->
-    <HBox alignment="CENTER_LEFT" spacing="12" styleClass="toolbar">
-        <TextField fx:id="searchCustomerField" prefWidth="260" promptText="Search by name or ID…" styleClass="text-field-styled" />
-        <Button onAction="#handleSearch" style="-fx-background-color: #C6A75EFF;" styleClass="btn-secondary" text="🔍 Search" textFill="WHITE" />
-        <Button onAction="#handleClearSearch" style="-fx-background-color: #C6A75EFF;" styleClass="btn-ghost" text="✕ Clear Search" textFill="WHITE" />
+    <!-- ── Search ───────────────────────── -->
+    <HBox spacing="12" alignment="CENTER_LEFT">
+
+        <TextField fx:id="searchCustomerField"
+                   prefWidth="260"
+                   promptText="Search by name or ID…"
+                   style="-fx-background-color: #1e1e1e; -fx-text-fill: white;"/>
+
+        <Button text="🔍 Search"
+                onAction="#handleSearch"
+                style="-fx-background-color: #c6a75e; -fx-text-fill: black;"/>
+
+        <Button text="✕ Clear Search"
+                onAction="#handleClearSearch"
+                style="-fx-background-color: transparent; -fx-border-color: #c6a75e; -fx-text-fill: #c6a75e;"/>
     </HBox>
 
-    <!-- ── Customer Table ────────────────────────────────────────── -->
-    <TableView fx:id="customerTable" styleClass="table-styled" VBox.vgrow="ALWAYS">
+    <!-- ── Table ───────────────────────── -->
+    <TableView fx:id="customerTable"
+               VBox.vgrow="ALWAYS"
+               style="-fx-background-color: #1c1c1c;">
+
         <columns>
-            <TableColumn fx:id="colCustomerId" prefWidth="120" text="Customer ID" />
-            <TableColumn fx:id="colCustomerName" prefWidth="200" text="Name" />
-            <TableColumn fx:id="colContact" prefWidth="150" text="Contact" />
-            <TableColumn fx:id="colDob" prefWidth="140" text="Date of Birth" />
+            <TableColumn fx:id="colCustomerId" text="Customer ID"/>
+            <TableColumn fx:id="colCustomerName" text="Name"/>
+            <TableColumn fx:id="colContact" text="Contact"/>
+            <TableColumn fx:id="colDob" text="Date of Birth"/>
         </columns>
-        <placeholder><Label styleClass="table-placeholder" text="No customers found." /></placeholder>
+
+        <placeholder>
+            <Label text="No customers found."
+                   style="-fx-text-fill: #888;"/>
+        </placeholder>
+
     </TableView>
+
 </VBox>

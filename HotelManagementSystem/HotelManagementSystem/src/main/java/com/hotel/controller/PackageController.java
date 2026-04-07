@@ -48,11 +48,11 @@ public class PackageController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // Populate package info cards
         basicDescLabel.setText(PackageType.BASIC.getDescription());
-        basicCostLabel.setText(String.format("$%.2f", PackageType.BASIC.getCost()));
+        basicCostLabel.setText(String.format("₹%.2f", PackageType.BASIC.getCost()));
         premiumDescLabel.setText(PackageType.PREMIUM.getDescription());
-        premiumCostLabel.setText(String.format("$%.2f", PackageType.PREMIUM.getCost()));
+        premiumCostLabel.setText(String.format("₹%.2f", PackageType.PREMIUM.getCost()));
         luxuryDescLabel.setText(PackageType.LUXURY.getDescription());
-        luxuryCostLabel.setText(String.format("$%.2f", PackageType.LUXURY.getCost()));
+        luxuryCostLabel.setText(String.format("₹%.2f", PackageType.LUXURY.getCost()));
 
         // Combo boxes
         packageTypeCombo.setItems(FXCollections.observableArrayList(PackageType.values()));
@@ -72,7 +72,7 @@ public class PackageController implements Initializable {
         PackageType type = packageTypeCombo.getValue();
         if (type == null) return;
         packageDescLabel.setText(type.getDescription());
-        packageCostLabel.setText(String.format("Cost: $%.2f", type.getCost()));
+        packageCostLabel.setText(String.format("Cost: ₹%.2f", type.getCost()));
     }
 
     @FXML

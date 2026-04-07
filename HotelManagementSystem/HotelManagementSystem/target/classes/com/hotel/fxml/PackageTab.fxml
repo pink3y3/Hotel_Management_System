@@ -5,53 +5,59 @@
 <?import javafx.scene.layout.*?>
 
 <VBox spacing="20"
-      styleClass="tab-content"
       xmlns="http://javafx.com/javafx/17.0.12"
       xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.hotel.controller.PackageController">
+      fx:controller="com.hotel.controller.PackageController"
+      style="-fx-background-color: #121212; -fx-padding: 24;">
 
-    <padding>
-        <Insets top="24" right="24" bottom="24" left="24"/>
-    </padding>
+    <!-- Title -->
+    <Label text="Available Packages"
+           style="-fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;"/>
 
-    <!-- ── Package Cards ───────────────────────── -->
-    <Label text="Available Packages" styleClass="card-title"/>
-
+    <!-- Package Cards -->
     <HBox spacing="20">
 
-        <!-- BASIC -->
-        <VBox spacing="10"
-              styleClass="package-card package-basic"
-              HBox.hgrow="ALWAYS">
-            <Label text="🌿 BASIC" styleClass="pkg-title"/>
-            <Label fx:id="basicDescLabel" styleClass="pkg-desc" wrapText="true"/>
-            <Label fx:id="basicCostLabel" styleClass="pkg-cost"/>
+        <VBox spacing="10" HBox.hgrow="ALWAYS"
+              style="-fx-background-color: #1c1c1c; -fx-padding: 16; -fx-border-color: #333;">
+            <Label text="🌿 BASIC"
+                   style="-fx-text-fill: #c6a75e; -fx-font-weight: bold;"/>
+            <Label fx:id="basicDescLabel"
+                   wrapText="true"
+                   style="-fx-text-fill: white;"/>
+            <Label fx:id="basicCostLabel"
+                   style="-fx-text-fill: #c6a75e;"/>
         </VBox>
 
-        <!-- PREMIUM -->
-        <VBox spacing="10"
-              styleClass="package-card package-premium"
-              HBox.hgrow="ALWAYS">
-            <Label text="⭐ PREMIUM" styleClass="pkg-title"/>
-            <Label fx:id="premiumDescLabel" styleClass="pkg-desc" wrapText="true"/>
-            <Label fx:id="premiumCostLabel" styleClass="pkg-cost"/>
+        <VBox spacing="10" HBox.hgrow="ALWAYS"
+              style="-fx-background-color: #1c1c1c; -fx-padding: 16; -fx-border-color: #333;">
+            <Label text="⭐ PREMIUM"
+                   style="-fx-text-fill: #c6a75e; -fx-font-weight: bold;"/>
+            <Label fx:id="premiumDescLabel"
+                   wrapText="true"
+                   style="-fx-text-fill: white;"/>
+            <Label fx:id="premiumCostLabel"
+                   style="-fx-text-fill: #c6a75e;"/>
         </VBox>
 
-        <!-- LUXURY -->
-        <VBox spacing="10"
-              styleClass="package-card package-luxury"
-              HBox.hgrow="ALWAYS">
-            <Label text="💎 LUXURY" styleClass="pkg-title"/>
-            <Label fx:id="luxuryDescLabel" styleClass="pkg-desc" wrapText="true"/>
-            <Label fx:id="luxuryCostLabel" styleClass="pkg-cost"/>
+        <VBox spacing="10" HBox.hgrow="ALWAYS"
+              style="-fx-background-color: #1c1c1c; -fx-padding: 16; -fx-border-color: #333;">
+            <Label text="💎 LUXURY"
+                   style="-fx-text-fill: #c6a75e; -fx-font-weight: bold;"/>
+            <Label fx:id="luxuryDescLabel"
+                   wrapText="true"
+                   style="-fx-text-fill: white;"/>
+            <Label fx:id="luxuryCostLabel"
+                   style="-fx-text-fill: #c6a75e;"/>
         </VBox>
 
     </HBox>
 
-    <!-- ── Assign Package ───────────────────────── -->
-    <VBox spacing="16" styleClass="card">
+    <!-- Assign Section -->
+    <VBox spacing="16"
+          style="-fx-background-color: #1c1c1c; -fx-padding: 16; -fx-border-color: #333;">
 
-        <Label text="Assign Package to Booking" styleClass="card-title"/>
+        <Label text="Assign Package to Booking"
+               style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
 
         <GridPane hgap="16" vgap="12">
 
@@ -62,38 +68,40 @@
                 <ColumnConstraints hgrow="ALWAYS"/>
             </columnConstraints>
 
-            <Label text="Select Booking" styleClass="field-label"
+            <Label text="Select Booking"
+                   style="-fx-text-fill: white;"
                    GridPane.rowIndex="0"/>
 
             <ComboBox fx:id="bookingCombo"
-                      styleClass="combo-styled"
                       maxWidth="Infinity"
+                      style="-fx-background-color: #1e1e1e; -fx-text-fill: white;"
                       GridPane.columnIndex="1"
                       GridPane.rowIndex="0"/>
 
-            <Label text="Package Type" styleClass="field-label"
+            <Label text="Package Type"
+                   style="-fx-text-fill: white;"
                    GridPane.columnIndex="2"
                    GridPane.rowIndex="0"/>
 
             <ComboBox fx:id="packageTypeCombo"
-                      styleClass="combo-styled"
                       maxWidth="Infinity"
+                      style="-fx-background-color: #1e1e1e; -fx-text-fill: white;"
                       GridPane.columnIndex="3"
                       GridPane.rowIndex="0"/>
 
-            <!-- Preview -->
-            <Label text="Description" styleClass="field-label"
+            <Label text="Description"
+                   style="-fx-text-fill: white;"
                    GridPane.rowIndex="1"/>
 
             <Label fx:id="packageDescLabel"
-                   styleClass="preview-label"
                    wrapText="true"
+                   style="-fx-text-fill: white;"
                    GridPane.columnIndex="1"
                    GridPane.columnSpan="2"
                    GridPane.rowIndex="1"/>
 
             <Label fx:id="packageCostLabel"
-                   styleClass="pkg-cost"
+                   style="-fx-text-fill: #c6a75e;"
                    GridPane.columnIndex="3"
                    GridPane.rowIndex="1"/>
 
@@ -102,31 +110,33 @@
         <HBox spacing="12">
             <Button text="✅ Assign Package"
                     onAction="#handleAssignPackage"
-                    styleClass="btn-primary"/>
+                    style="-fx-background-color: #c6a75e; -fx-text-fill: black;"/>
 
             <Button text="↺ Refresh"
                     onAction="#handleRefresh"
-                    styleClass="btn-ghost"/>
+                    style="-fx-background-color: transparent; -fx-border-color: #c6a75e; -fx-text-fill: #c6a75e;"/>
         </HBox>
 
     </VBox>
 
-    <!-- ── History ───────────────────────── -->
-    <Label text="Package Assignment History" styleClass="section-title"/>
+    <!-- Table -->
+    <Label text="Package Assignment History"
+           style="-fx-text-fill: white; -fx-font-size: 16px;"/>
 
     <TableView fx:id="assignTable"
-               styleClass="table-styled"
-               VBox.vgrow="ALWAYS">
+               VBox.vgrow="ALWAYS"
+               style="-fx-background-color: #1c1c1c;">
 
         <columns>
-            <TableColumn fx:id="colAssignBookingId" text="Booking ID" prefWidth="120"/>
-            <TableColumn fx:id="colAssignCustomer" text="Customer" prefWidth="180"/>
-            <TableColumn fx:id="colAssignRoom" text="Room" prefWidth="80"/>
-            <TableColumn fx:id="colAssignPackage" text="Package" prefWidth="120"/>
+            <TableColumn fx:id="colAssignBookingId" text="Booking ID"/>
+            <TableColumn fx:id="colAssignCustomer" text="Customer"/>
+            <TableColumn fx:id="colAssignRoom" text="Room"/>
+            <TableColumn fx:id="colAssignPackage" text="Package"/>
         </columns>
 
         <placeholder>
-            <Label text="No package assignments yet." styleClass="table-placeholder"/>
+            <Label text="No package assignments yet."
+                   style="-fx-text-fill: #888;"/>
         </placeholder>
 
     </TableView>

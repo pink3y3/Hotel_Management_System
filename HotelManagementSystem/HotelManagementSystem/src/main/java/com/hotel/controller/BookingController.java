@@ -17,6 +17,7 @@ import java.time.LocalDate;
  * BookingController — Booking tab.
  * Handles: Book room, prevent duplicate, booking history, unique BOOK-IDs.
  */
+
 public class BookingController implements Initializable {
 
     @FXML private ComboBox<Customer> customerCombo;
@@ -180,5 +181,36 @@ public class BookingController implements Initializable {
         checkInPicker.setValue(null);
         checkOutPicker.setValue(null);
         birthdayLabel.setText("");
+    }
+
+    @FXML
+    private void handleCheckout() {
+        Booking selected = bookingTable.getSelectionModel().getSelectedItem();
+
+        if (selected == null) {
+            AlertUtil.showWarning("No Selection", "Please select a booking.");
+            return;
+        }
+
+        if (!selected.isActive()) {
+            AlertUtil.showInfo("Already Done", "This booking is already checked out.");
+            return;
+        }
+
+        // Mark as checked out
+        selected.setActive(false);
+
+        String roomNumber = selected.getRoom().getRoomNumber();
+
+        for (Room r : dm.getAllRooms()) {
+            if (r.getRoomNumber().equals(roomNumber)) {
+                r.setAvailable(true);
+                break;
+            }
+        }
+
+        bookingTable.refresh();
+
+        AlertUtil.showInfo("Success", "Checkout successful!");
     }
 }

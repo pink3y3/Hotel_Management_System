@@ -115,5 +115,12 @@
         </placeholder>
 
     </TableView>
+    <HBox spacing="12"
+          alignment="CENTER_RIGHT"
+          style="-fx-padding: 10 0 0 0;">
 
+        <Button text="🚪 Checkout"
+                onAction="#handleCheckout"
+                style="-fx-background-color: #c6a75e; -fx-text-fill: black;"/>
+    </HBox>
 </VBox>

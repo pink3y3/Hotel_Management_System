@@ -70,6 +70,13 @@ public class RoomController implements Initializable {
         });
 
         refreshTable();
+
+        // ✅ ADD THIS HERE (correct place)
+        roomTable.sceneProperty().addListener((obs, oldScene, newScene) -> {
+            if (newScene != null) {
+                refreshTable();
+            }
+        });
     }
 
     @FXML
@@ -147,4 +154,5 @@ public class RoomController implements Initializable {
         roomTypeCombo.getSelectionModel().selectFirst();
         availableCheckBox.setSelected(true);
     }
+
 }

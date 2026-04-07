@@ -4,66 +4,123 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<!--
-  RoomTab.fxml  —  Rooms tab content
-  Controller: RoomController (injected by fx:include in Dashboard.fxml)
--->
+<VBox spacing="20"
+      xmlns="http://javafx.com/javafx/17.0.12"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.hotel.controller.RoomController"
+      style="-fx-background-color: #121212; -fx-padding: 24;">
 
-<VBox spacing="16" styleClass="tab-content" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="com.hotel.controller.RoomController">
-    <padding><Insets bottom="20" left="20" right="20" top="20" /></padding>
+    <!-- ── Add Room Form ───────────────────────── -->
+    <VBox spacing="16"
+          style="-fx-background-color: #1c1c1c; -fx-padding: 16; -fx-border-color: #333;">
 
-    <!-- ── Add Room Form ─────────────────────────────────────────── -->
-    <VBox spacing="14" styleClass="card">
-        <Label styleClass="card-title" text="Add New Room" />
+        <Label text="Add New Room"
+               style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
 
         <GridPane hgap="16" vgap="12">
+
             <columnConstraints>
-                <ColumnConstraints minWidth="120" prefWidth="140" />
-                <ColumnConstraints hgrow="ALWAYS" />
-                <ColumnConstraints minWidth="120" prefWidth="140" />
-                <ColumnConstraints hgrow="ALWAYS" />
+                <ColumnConstraints prefWidth="140"/>
+                <ColumnConstraints hgrow="ALWAYS"/>
+                <ColumnConstraints prefWidth="140"/>
+                <ColumnConstraints hgrow="ALWAYS"/>
             </columnConstraints>
 
             <!-- Row 0 -->
-            <Label styleClass="field-label" text="Room Number" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-            <TextField fx:id="roomNumberField" promptText="e.g. 101" styleClass="text-field-styled" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <Label text="Room Number"
+                   style="-fx-text-fill: white;"
+                   GridPane.rowIndex="0"/>
 
-            <Label styleClass="field-label" text="Room Type" GridPane.columnIndex="2" GridPane.rowIndex="0" />
-            <ComboBox fx:id="roomTypeCombo" maxWidth="Infinity" style="-fx-background-color: #C6A75EFF;" styleClass="combo-styled" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+            <TextField fx:id="roomNumberField"
+                       promptText="e.g. 101"
+                       style="-fx-background-color: #1e1e1e; -fx-text-fill: white;"
+                       GridPane.columnIndex="1"
+                       GridPane.rowIndex="0"/>
+
+            <Label text="Room Type"
+                   style="-fx-text-fill: white;"
+                   GridPane.columnIndex="2"
+                   GridPane.rowIndex="0"/>
+
+            <ComboBox fx:id="roomTypeCombo"
+                      maxWidth="Infinity"
+                      style="-fx-background-color: #1e1e1e; -fx-text-fill: white;"
+                      GridPane.columnIndex="3"
+                      GridPane.rowIndex="0"/>
 
             <!-- Row 1 -->
-            <Label styleClass="field-label" text="Price / Night (₹)" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-            <TextField fx:id="priceField" promptText="e.g. 5000.00" styleClass="text-field-styled" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Price / Night (₹)"
+                   style="-fx-text-fill: white;"
+                   GridPane.rowIndex="1"/>
 
-            <Label styleClass="field-label" text="Available" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <CheckBox fx:id="availableCheckBox" selected="true" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-         <rowConstraints>
-            <RowConstraints />
-            <RowConstraints />
-         </rowConstraints>
+            <TextField fx:id="priceField"
+                       promptText="e.g. 5000.00"
+                       style="-fx-background-color: #1e1e1e; -fx-text-fill: white;"
+                       GridPane.columnIndex="1"
+                       GridPane.rowIndex="1"/>
+
+            <Label text="Available"
+                   style="-fx-text-fill: white;"
+                   GridPane.columnIndex="2"
+                   GridPane.rowIndex="1"/>
+
+            <CheckBox fx:id="availableCheckBox"
+                      selected="true"
+                      style="-fx-text-fill: white;"
+                      GridPane.columnIndex="3"
+                      GridPane.rowIndex="1"/>
+
         </GridPane>
 
-        <HBox spacing="10">
-            <Button onAction="#handleAddRoom" style="-fx-background-color: #C6A75EFF;" styleClass="btn-primary" text="➕  Add Room" textFill="WHITE" />
+        <HBox spacing="12">
+            <Button text="➕ Add Room"
+                    onAction="#handleAddRoom"
+                    style="-fx-background-color: #c6a75e; -fx-text-fill: black;"/>
         </HBox>
+
     </VBox>
 
-    <!-- ── Filter / Search bar ───────────────────────────────────── -->
-    <HBox alignment="CENTER_LEFT" spacing="12" styleClass="toolbar">
-        <CheckBox fx:id="filterAvailableCheckBox" onAction="#handleFilter" styleClass="check-toolbar" text="Show Available Only" />
-        <TextField fx:id="searchRoomField" prefWidth="220" promptText="Search room number or type…" styleClass="text-field-styled" />
-        <Button onAction="#handleSearch" style="-fx-background-color: #C6A75EFF;" styleClass="btn-secondary" text="🔍 Search" textFill="WHITE" />
-        <Button onAction="#handleRefresh" style="-fx-background-color: #C6A75EFF;" styleClass="btn-ghost" text="↺ Refresh" textFill="WHITE" />
+    <!-- ── Filter / Search ───────────────────────── -->
+    <HBox spacing="12"
+          alignment="CENTER_LEFT"
+          style="-fx-background-color: transparent;">
+
+        <CheckBox fx:id="filterAvailableCheckBox"
+                  text="Show Available Only"
+                  onAction="#handleFilter"
+                  style="-fx-text-fill: white;"/>
+
+        <TextField fx:id="searchRoomField"
+                   prefWidth="220"
+                   promptText="Search room number or type…"
+                   style="-fx-background-color: #1e1e1e; -fx-text-fill: white;"/>
+
+        <Button text="🔍 Search"
+                onAction="#handleSearch"
+                style="-fx-background-color: #c6a75e; -fx-text-fill: black;"/>
+
+        <Button text="↺ Refresh"
+                onAction="#handleRefresh"
+                style="-fx-background-color: transparent; -fx-border-color: #c6a75e; -fx-text-fill: #c6a75e;"/>
     </HBox>
 
-    <!-- ── Room Table ─────────────────────────────────────────────── -->
-    <TableView fx:id="roomTable" styleClass="table-styled" VBox.vgrow="ALWAYS">
+    <!-- ── Table ───────────────────────── -->
+    <TableView fx:id="roomTable"
+               VBox.vgrow="ALWAYS"
+               style="-fx-background-color: #1c1c1c;">
+
         <columns>
-            <TableColumn fx:id="colRoomNumber" prefWidth="100" text="Room #" />
-            <TableColumn fx:id="colRoomType" prefWidth="120" text="Type" />
-            <TableColumn fx:id="colPrice" prefWidth="140" text="Price/Night (₹)" />
-            <TableColumn fx:id="colStatus" prefWidth="120" text="Status" />
+            <TableColumn fx:id="colRoomNumber" text="Room #"/>
+            <TableColumn fx:id="colRoomType" text="Type"/>
+            <TableColumn fx:id="colPrice" text="Price/Night (₹)"/>
+            <TableColumn fx:id="colStatus" text="Status"/>
         </columns>
-        <placeholder><Label styleClass="table-placeholder" text="No rooms found." /></placeholder>
+
+        <placeholder>
+            <Label text="No rooms found."
+                   style="-fx-text-fill: #888;"/>
+        </placeholder>
+
     </TableView>
+
 </VBox>

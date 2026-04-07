@@ -24,12 +24,12 @@
     <HBox spacing="16" VBox.vgrow="ALWAYS">
 
         <!-- Left: structured details -->
-        <VBox styleClass="card" spacing="12" prefWidth="380" minWidth="320">
+        <VBox styleClass="card" spacing="12" prefWidth="400" minWidth="340">
             <Label text="Bill Details" styleClass="card-title"/>
 
             <GridPane hgap="12" vgap="10">
                 <columnConstraints>
-                    <ColumnConstraints prefWidth="140"/>
+                    <ColumnConstraints prefWidth="150"/>
                     <ColumnConstraints hgrow="ALWAYS"/>
                 </columnConstraints>
 
@@ -47,13 +47,13 @@
 
                 <Separator GridPane.columnIndex="0" GridPane.rowIndex="4" GridPane.columnSpan="2"/>
 
-                <Label text="Room Charges"       styleClass="bill-label" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+                <Label text="Room Charges (₹)"   styleClass="bill-label" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
                 <Label fx:id="roomChargesLabel"  text="—" styleClass="bill-value" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
 
-                <Label text="Package Cost"       styleClass="bill-label" GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+                <Label text="Package Cost (₹)"   styleClass="bill-label" GridPane.columnIndex="0" GridPane.rowIndex="6"/>
                 <Label fx:id="packageCostLabel"  text="—" styleClass="bill-value" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
 
-                <Label text="Sub-Total"          styleClass="bill-label" GridPane.columnIndex="0" GridPane.rowIndex="7"/>
+                <Label text="Sub-Total (₹)"      styleClass="bill-label" GridPane.columnIndex="0" GridPane.rowIndex="7"/>
                 <Label fx:id="subTotalLabel"     text="—" styleClass="bill-value" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
 
                 <Label text="Discount"           styleClass="bill-label" GridPane.columnIndex="0" GridPane.rowIndex="8"/>
@@ -61,7 +61,7 @@
 
                 <Separator GridPane.columnIndex="0" GridPane.rowIndex="9" GridPane.columnSpan="2"/>
 
-                <Label text="TOTAL PAYABLE"      styleClass="bill-total-label" GridPane.columnIndex="0" GridPane.rowIndex="10"/>
+                <Label text="TOTAL PAYABLE (₹)"  styleClass="bill-total-label" GridPane.columnIndex="0" GridPane.rowIndex="10"/>
                 <Label fx:id="finalBillLabel"    text="—" styleClass="bill-total-value" GridPane.columnIndex="1" GridPane.rowIndex="10"/>
             </GridPane>
 

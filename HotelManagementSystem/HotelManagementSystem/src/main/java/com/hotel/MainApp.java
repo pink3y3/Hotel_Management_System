@@ -15,19 +15,22 @@ public class MainApp extends Application {
                 getClass().getResource("/com/hotel/fxml/Login.fxml"));
         Parent root = loader.load();
 
-        Scene scene = new Scene(root, 480, 360);
+        // Set window size here
+        Scene scene = new Scene(root, 350, 420);
+
+        // Attach CSS
         scene.getStylesheets().add(
                 getClass().getResource("/com/hotel/css/hotel.css").toExternalForm());
 
-        primaryStage.setTitle("Horizon Hotel — Admin Login");
+        primaryStage.setTitle("The Stanley Hotel — Admin Login");
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
+        primaryStage.centerOnScreen();
         primaryStage.show();
     }
 
     @Override
     public void stop() {
-        // Gracefully shut down the e-mail thread pool
         EmailService.shutdown();
     }
 

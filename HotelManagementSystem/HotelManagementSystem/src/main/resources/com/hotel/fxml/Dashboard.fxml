@@ -1,80 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<!--
-  Dashboard.fxml  —  Main window after login.
-  Uses a TabPane with one fx:include per tab so each tab has its own
-  FXML file and controller (MVC separation).
+<BorderPane xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.hotel.controller.DashboardController"
+            style="-fx-background-color: #121212; -fx-font-family: 'Georgia'; -fx-font-size: 13px;">
 
-  Controller injection convention:
-    fx:id="roomTab"     → roomTabController     (RoomController)
-    fx:id="customerTab" → customerTabController (CustomerController)
-    fx:id="bookingTab"  → bookingTabController  (BookingController)
-    fx:id="packageTab"  → packageTabController  (PackageController)
-    fx:id="billingTab"  → billingTabController  (BillingController)
-  The "Controller" suffix is appended automatically by FXML.
--->
-
-<BorderPane styleClass="dashboard-root" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hotel.controller.DashboardController">
-
-    <!-- ── Top header bar ───────────────────────────────────────── -->
+    <!-- ── Top Header ───────────────────────── -->
     <top>
-        <HBox alignment="CENTER_LEFT" spacing="12" style="-fx-background-color: #0a0a0a;" styleClass="dashboard-header">
-            <padding><Insets bottom="12" left="24" right="24" top="12" /></padding>
-            <Label styleClass="header-icon" text="♞" textFill="WHITE">
-            <font>
-               <Font size="20.0" />
-            </font></Label>
-            <VBox prefHeight="32.0" prefWidth="203.0">
-                <Label prefHeight="16.0" prefWidth="185.0" styleClass="header-title" text="THE STANLEY HOTEL" textFill="WHITE">
-               <font>
-                  <Font name="Bookman Old Style" size="12.0" />
-               </font></Label>
-                <Label styleClass="header-sub" text="Management System" textFill="WHITE">
-               <font>
-                  <Font name="Bookman Old Style" size="12.0" />
-               </font></Label>
+        <HBox alignment="CENTER_LEFT"
+              spacing="16"
+              style="-fx-background-color: #1c1c1c; -fx-padding: 16 32 16 32;">
+
+            <!-- Icon -->
+            <Label text="♞"
+                   style="-fx-text-fill: #c6a75e; -fx-font-size: 24px;"/>
+
+            <!-- Title -->
+            <VBox spacing="2">
+                <Label text="THE STANLEY HOTEL"
+                       style="-fx-text-fill: #c6a75e; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+                <Label text="Management System"
+                       style="-fx-text-fill: #cccccc; -fx-font-size: 11px;"/>
             </VBox>
         </HBox>
     </top>
 
-    <!-- ── Tab pane ─────────────────────────────────────────────── -->
+    <!-- ── Tabs ───────────────────────── -->
     <center>
-        <TabPane fx:id="mainTabPane" style="-fx-background-color: #f0f0f0;" styleClass="main-tab-pane" tabClosingPolicy="UNAVAILABLE">
+        <TabPane fx:id="mainTabPane"
+                 tabClosingPolicy="UNAVAILABLE"
+                 style="-fx-background-color: #121212;">
 
-            <!-- 0 — Rooms -->
-            <Tab text="🛏  Rooms">
-                <fx:include fx:id="roomTab" source="RoomTab.fxml" />
-            </Tab>
+            <tabs>
 
-            <!-- 1 — Customers -->
-            <Tab text="👤  Customers">
-                <fx:include fx:id="customerTab" source="CustomerTab.fxml" />
-            </Tab>
+                <Tab text="🛏 Rooms"
+                     style="-fx-background-color: #1c1c1c; -fx-text-base-color: white;">
+                    <fx:include fx:id="roomTab" source="RoomTab.fxml"/>
+                </Tab>
 
-            <!-- 2 — Booking -->
-            <Tab text="📋  Booking">
-                <fx:include fx:id="bookingTab" source="BookingTab.fxml" />
-            </Tab>
+                <Tab text="👤 Customers"
+                     style="-fx-background-color: #1c1c1c; -fx-text-base-color: white;">
+                    <fx:include fx:id="customerTab" source="CustomerTab.fxml"/>
+                </Tab>
 
-            <!-- 3 — Packages -->
-            <Tab text="🎁  Packages">
-                <fx:include fx:id="packageTab" source="PackageTab.fxml" />
-            </Tab>
+                <Tab text="📋 Booking"
+                     style="-fx-background-color: #1c1c1c; -fx-text-base-color: white;">
+                    <fx:include fx:id="bookingTab" source="BookingTab.fxml"/>
+                </Tab>
 
-            <!-- 4 — Billing -->
-            <Tab text="💳  Billing">
-                <fx:include fx:id="billingTab" source="BillingTab.fxml" />
-            </Tab>
+                <Tab text="🎁 Packages"
+                     style="-fx-background-color: #1c1c1c; -fx-text-base-color: white;">
+                    <fx:include fx:id="packageTab" source="PackageTab.fxml"/>
+                </Tab>
 
+                <Tab text="💳 Billing"
+                     style="-fx-background-color: #1c1c1c; -fx-text-base-color: white;">
+                    <fx:include fx:id="billingTab" source="BillingTab.fxml"/>
+                </Tab>
+
+            </tabs>
         </TabPane>
     </center>
 

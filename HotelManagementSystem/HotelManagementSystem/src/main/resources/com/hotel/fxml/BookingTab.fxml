@@ -1,115 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.geometry.Insets?>
 
-<!--
-  BookingTab.fxml  —  Booking tab content
-  Controller: BookingController
-
-  KEY FEATURES:
-  ─────────────
-  1. DatePicker (fx:id="checkInPicker")  — Check-in Date
-  2. DatePicker (fx:id="checkOutPicker") — Check-out Date
-
-  Validation enforced in BookingController.handleBook():
-    a. Both pickers must not be null.
-    b. checkOutDate.isAfter(checkInDate) — otherwise shows an error alert:
-       "Check-out date must be after check-in date."
-
-  Birthday discount:
-    • When customer + check-in date are both selected, the controller
-      listens for changes and shows birthdayLabel if DOB matches.
-    • 8% discount is applied automatically and shown in the confirmation.
-
-  Booking IDs are generated as BOOK1, BOOK2, BOOK3, … by
-  HotelDataManager.generateBookingId().
--->
-<VBox xmlns:fx="http://javafx.com/fxml"
+<VBox spacing="20"
+      xmlns="http://javafx.com/javafx/17.0.12"
+      xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="com.hotel.controller.BookingController"
-      styleClass="tab-content" spacing="16">
-    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+      style="-fx-background-color: #121212; -fx-padding: 24;">
 
-    <!-- ── New Booking Form ──────────────────────────────────────── -->
-    <VBox styleClass="card" spacing="14">
-        <Label text="New Booking" styleClass="card-title"/>
+    <!-- ── New Booking ───────────────────────── -->
+    <VBox spacing="16"
+          style="-fx-background-color: #1c1c1c; -fx-padding: 16; -fx-border-color: #333;">
+
+        <Label text="New Booking"
+               style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
 
         <GridPane hgap="16" vgap="12">
+
             <columnConstraints>
-                <ColumnConstraints minWidth="130" prefWidth="150"/>
+                <ColumnConstraints prefWidth="150"/>
                 <ColumnConstraints hgrow="ALWAYS"/>
-                <ColumnConstraints minWidth="130" prefWidth="150"/>
+                <ColumnConstraints prefWidth="150"/>
                 <ColumnConstraints hgrow="ALWAYS"/>
             </columnConstraints>
 
-            <!-- Row 0: Customer | Room -->
-            <Label text="Customer" styleClass="field-label"
-                   GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-            <ComboBox fx:id="customerCombo" maxWidth="Infinity"
-                      styleClass="combo-styled"
-                      GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+            <!-- Row 0 -->
+            <Label text="Customer"
+                   style="-fx-text-fill: white;"
+                   GridPane.rowIndex="0"/>
 
-            <Label text="Available Room" styleClass="field-label"
-                   GridPane.columnIndex="2" GridPane.rowIndex="0"/>
-            <ComboBox fx:id="roomCombo" maxWidth="Infinity"
-                      styleClass="combo-styled"
-                      GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+            <ComboBox fx:id="customerCombo"
+                      maxWidth="Infinity"
+                      style="-fx-background-color: #1e1e1e; -fx-text-fill: white;"
+                      GridPane.columnIndex="1"
+                      GridPane.rowIndex="0"/>
 
-            <!-- Row 1: Check-in DatePicker | Check-out DatePicker -->
-            <!--
-              CHECK-IN DatePicker
-              ────────────────────
-              Provides a calendar pop-up; value is a LocalDate.
-              The controller listens to this picker's value to detect
-              if it matches the selected customer's birthday.
-            -->
-            <Label text="Check-in Date" styleClass="field-label"
-                   GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <Label text="Available Room"
+                   style="-fx-text-fill: white;"
+                   GridPane.columnIndex="2"
+                   GridPane.rowIndex="0"/>
+
+            <ComboBox fx:id="roomCombo"
+                      maxWidth="Infinity"
+                      style="-fx-background-color: #1e1e1e; -fx-text-fill: white;"
+                      GridPane.columnIndex="3"
+                      GridPane.rowIndex="0"/>
+
+            <!-- Row 1 -->
+            <Label text="Check-in Date"
+                   style="-fx-text-fill: white;"
+                   GridPane.rowIndex="1"/>
+
             <DatePicker fx:id="checkInPicker"
+                        maxWidth="Infinity"
                         promptText="Select check-in date"
-                        maxWidth="Infinity"
-                        styleClass="date-picker-styled"
-                        GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                        style="-fx-background-color: #1e1e1e;"
+                        GridPane.columnIndex="1"
+                        GridPane.rowIndex="1"/>
 
-            <!--
-              CHECK-OUT DatePicker
-              ─────────────────────
-              VALIDATION: controller calls  checkOutDate.isAfter(checkInDate)
-              If false → Alert error: "Check-out date must be after check-in date."
-              Number of nights = ChronoUnit.DAYS.between(checkIn, checkOut)
-            -->
-            <Label text="Check-out Date" styleClass="field-label"
-                   GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+            <Label text="Check-out Date"
+                   style="-fx-text-fill: white;"
+                   GridPane.columnIndex="2"
+                   GridPane.rowIndex="1"/>
+
             <DatePicker fx:id="checkOutPicker"
-                        promptText="Select check-out date"
                         maxWidth="Infinity"
-                        styleClass="date-picker-styled"
-                        GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+                        promptText="Select check-out date"
+                        style="-fx-background-color: #1e1e1e;"
+                        GridPane.columnIndex="3"
+                        GridPane.rowIndex="1"/>
+
         </GridPane>
 
-        <!-- Birthday discount notice (shown dynamically by controller) -->
-        <Label fx:id="birthdayLabel" text="" styleClass="birthday-label"/>
+        <!-- Birthday Discount -->
+        <Label fx:id="birthdayLabel"
+               text=""
+               style="-fx-text-fill: #c6a75e; -fx-font-weight: bold;"/>
 
-        <HBox spacing="10">
-            <Button text="📋  Book Room"  onAction="#handleBook"    styleClass="btn-primary"/>
-            <Button text="↺  Refresh"    onAction="#handleRefresh" styleClass="btn-ghost"/>
+        <HBox spacing="12">
+            <Button text="📋 Book Room"
+                    onAction="#handleBook"
+                    style="-fx-background-color: #c6a75e; -fx-text-fill: black;"/>
+
+            <Button text="↺ Refresh"
+                    onAction="#handleRefresh"
+                    style="-fx-background-color: transparent; -fx-border-color: #c6a75e; -fx-text-fill: #c6a75e;"/>
         </HBox>
+
     </VBox>
 
-    <!-- ── Booking History Table ─────────────────────────────────── -->
-    <Label text="Booking History" styleClass="section-title"/>
+    <!-- ── Booking History ───────────────────────── -->
+    <Label text="Booking History"
+           style="-fx-text-fill: white; -fx-font-size: 16px;"/>
 
-    <TableView fx:id="bookingTable" VBox.vgrow="ALWAYS" styleClass="table-styled">
+    <TableView fx:id="bookingTable"
+               VBox.vgrow="ALWAYS"
+               style="-fx-background-color: #1c1c1c;">
+
         <columns>
-            <TableColumn fx:id="colBookingId"    text="Booking ID"  prefWidth="110"/>
-            <TableColumn fx:id="colCustomerName" text="Customer"    prefWidth="160"/>
-            <TableColumn fx:id="colRoomNumber"   text="Room"        prefWidth="80"/>
-            <TableColumn fx:id="colCheckIn"      text="Check-in"    prefWidth="110"/>
-            <TableColumn fx:id="colCheckOut"     text="Check-out"   prefWidth="110"/>
-            <TableColumn fx:id="colPackageName"  text="Package"     prefWidth="110"/>
-            <TableColumn fx:id="colStatus"       text="Status"      prefWidth="100"/>
+            <TableColumn fx:id="colBookingId" text="Booking ID"/>
+            <TableColumn fx:id="colCustomerName" text="Customer"/>
+            <TableColumn fx:id="colRoomNumber" text="Room"/>
+            <TableColumn fx:id="colCheckIn" text="Check-in"/>
+            <TableColumn fx:id="colCheckOut" text="Check-out"/>
+            <TableColumn fx:id="colPackageName" text="Package"/>
+            <TableColumn fx:id="colStatus" text="Status"/>
         </columns>
-        <placeholder><Label text="No bookings yet." styleClass="table-placeholder"/></placeholder>
+
+        <placeholder>
+            <Label text="No bookings yet."
+                   style="-fx-text-fill: #888;"/>
+        </placeholder>
+
     </TableView>
+
 </VBox>

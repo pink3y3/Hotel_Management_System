@@ -1,333 +1,149 @@
-/* ═══════════════════════════════════════════════════════════════
-   hotel.css  —  Horizon Hotel Management System
-   ═══════════════════════════════════════════════════════════════ */
+/* ═══════════════════════════════════════════════════════
+   CLASSIC LUXURY THEME — Black • White • Gold
+   ═══════════════════════════════════════════════════════ */
 
-/* ── Global colour palette ─────────────────────────────────────── */
-/* Navy:   #1a2744  |  Gold:  #c9a84c  |  Green: #27ae60
-   Red:    #e74c3c  |  Grey:  #f4f6fa  |  Card:  #ffffff  */
+/* Palette
+   Black: #121212
+   Soft Black: #1c1c1c
+   Gold: #c6a75e
+   Light BG: #fafafa
+*/
 
-/* ── Root / background ─────────────────────────────────────────── */
+/* ── Root ───────────────────────────── */
 .root {
     -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     -fx-font-size: 13px;
-    -fx-background-color: #f4f6fa;
+    -fx-background-color: #fafafa;
 }
 
-/* ════════════════════════════════════════════════════════════════
-   LOGIN SCREEN
-   ════════════════════════════════════════════════════════════════ */
-
-.login-root {
-    -fx-background-color: linear-gradient(to bottom, #1a2744, #2c3e6b);
-    -fx-min-height: 360px;
-}
-
-.login-header {
-    -fx-padding: 28 0 20 0;
-}
-
-.login-hotel-icon {
-    -fx-font-size: 40px;
-}
-
-.login-title {
-    -fx-font-size: 26px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #c9a84c;
-    -fx-letter-spacing: 3px;
-}
-
-.login-subtitle {
-    -fx-font-size: 13px;
-    -fx-text-fill: #a0aec0;
-}
-
-.login-card {
-    -fx-background-color: #ffffff;
-    -fx-background-radius: 12;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.35), 20, 0, 0, 6);
-    -fx-max-width: 360px;
-    -fx-min-width: 320px;
-}
-
-.login-card-title {
-    -fx-font-size: 17px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #1a2744;
-    -fx-padding: 0 0 6 0;
-}
-
-.login-hint {
-    -fx-font-size: 11px;
-    -fx-text-fill: #a0aec0;
-}
-
-/* ════════════════════════════════════════════════════════════════
-   DASHBOARD CHROME
-   ════════════════════════════════════════════════════════════════ */
-
-.dashboard-root {
-    -fx-background-color: #f4f6fa;
-}
+/* ═════════════════════════════════════
+   HEADER
+   ═════════════════════════════════════ */
 
 .dashboard-header {
-    -fx-background-color: linear-gradient(to right, #1a2744, #2c3e6b);
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 8, 0, 0, 2);
-}
-
-.header-icon {
-    -fx-font-size: 26px;
+    -fx-background-color: #121212;
+    -fx-padding: 12 20;
+    -fx-border-color: transparent transparent #c6a75e transparent;
+    -fx-border-width: 0 0 1 0;
 }
 
 .header-title {
-    -fx-font-size: 18px;
+    -fx-text-fill: #c6a75e;
+    -fx-font-size: 17px;
     -fx-font-weight: bold;
-    -fx-text-fill: #c9a84c;
-    -fx-letter-spacing: 2px;
 }
 
 .header-sub {
+    -fx-text-fill: #aaaaaa;
     -fx-font-size: 11px;
-    -fx-text-fill: #a0aec0;
 }
 
-/* ── Tab pane ───────────────────────────────────────────────────── */
-
-.main-tab-pane > .tab-header-area > .headers-region > .tab {
-    -fx-background-color: #e8edf5;
-    -fx-padding: 8 18 8 18;
-    -fx-font-size: 13px;
-    -fx-text-fill: #4a5568;
-    -fx-cursor: hand;
-}
-
-.main-tab-pane > .tab-header-area > .headers-region > .tab:selected {
-    -fx-background-color: #1a2744;
-    -fx-text-fill: #c9a84c;
-    -fx-font-weight: bold;
-}
-
-.main-tab-pane > .tab-header-area {
-    -fx-background-color: #dde3ef;
-    -fx-padding: 4 0 0 0;
-}
-
-.main-tab-pane .tab-content-area {
-    -fx-background-color: #f4f6fa;
-}
-
-/* ── Tab content wrapper ────────────────────────────────────────── */
-.tab-content {
-    -fx-background-color: #f4f6fa;
-}
-
-/* ════════════════════════════════════════════════════════════════
+/* ═════════════════════════════════════
    CARDS
-   ════════════════════════════════════════════════════════════════ */
+   ═════════════════════════════════════ */
 
 .card {
     -fx-background-color: #ffffff;
     -fx-background-radius: 10;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 10, 0, 0, 2);
-    -fx-padding: 18 20 18 20;
+    -fx-padding: 20 22;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 10, 0, 0, 2);
 }
 
 .card-title {
     -fx-font-size: 15px;
     -fx-font-weight: bold;
-    -fx-text-fill: #1a2744;
-    -fx-padding: 0 0 6 0;
+    -fx-text-fill: #121212;
 }
 
 .section-title {
-    -fx-font-size: 14px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #2c3e6b;
+    -fx-font-size: 13px;
+    -fx-text-fill: #444;
+    -fx-font-weight: 600;
 }
 
-/* ════════════════════════════════════════════════════════════════
-   FORM CONTROLS
-   ════════════════════════════════════════════════════════════════ */
+/* ═════════════════════════════════════
+   FORM ELEMENTS
+   ═════════════════════════════════════ */
 
 .field-label {
     -fx-font-size: 12px;
+    -fx-text-fill: #555;
     -fx-font-weight: bold;
-    -fx-text-fill: #4a5568;
 }
 
-/* TextField */
 .text-field-styled {
-    -fx-background-color: #f8fafc;
-    -fx-border-color: #cbd5e0;
-    -fx-border-radius: 6;
-    -fx-background-radius: 6;
-    -fx-padding: 7 10 7 10;
-    -fx-font-size: 13px;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #ddd;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 8 10;
 }
 
 .text-field-styled:focused {
-    -fx-border-color: #1a2744;
-    -fx-background-color: #ffffff;
-    -fx-effect: dropshadow(gaussian, rgba(26,39,68,0.2), 6, 0, 0, 0);
+    -fx-border-color: #c6a75e;
 }
 
-/* ComboBox */
-.combo-styled {
-    -fx-background-color: #f8fafc;
-    -fx-border-color: #cbd5e0;
-    -fx-border-radius: 6;
-    -fx-background-radius: 6;
-    -fx-padding: 4 8 4 8;
-    -fx-font-size: 13px;
-}
-
-.combo-styled:focused {
-    -fx-border-color: #1a2744;
-}
-
-/* DatePicker — shares the same look as TextField for consistency */
+/* DatePicker */
 .date-picker-styled {
-    -fx-background-color: #f8fafc;
-    -fx-border-color: #cbd5e0;
-    -fx-border-radius: 6;
-    -fx-background-radius: 6;
-    -fx-padding: 4 8 4 8;
-    -fx-font-size: 13px;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #ddd;
+    -fx-border-radius: 5;
 }
 
 .date-picker-styled:focused {
-    -fx-border-color: #1a2744;
+    -fx-border-color: #c6a75e;
 }
 
-/* Style the pop-up calendar */
-.date-picker-popup > .month-year-pane {
-    -fx-background-color: #1a2744;
-}
-
-.date-picker-popup .spinner > .button > .left-arrow,
-.date-picker-popup .spinner > .button > .right-arrow {
-    -fx-background-color: #c9a84c;
-}
-
-.date-picker-popup .day-cell:focused,
-.date-picker-popup .day-cell:hover {
-    -fx-background-color: #e8edf5;
-}
-
-.date-picker-popup .day-cell.today {
-    -fx-border-color: #c9a84c;
-}
-
-.date-picker-popup .day-cell.selected {
-    -fx-background-color: #1a2744;
-    -fx-text-fill: #c9a84c;
-}
-
-/* DatePicker text field inner part */
-.date-picker-styled > .text-field {
-    -fx-background-color: transparent;
-    -fx-border-width: 0;
-    -fx-padding: 3 6 3 6;
-}
-
-/* ════════════════════════════════════════════════════════════════
+/* ═════════════════════════════════════
    BUTTONS
-   ════════════════════════════════════════════════════════════════ */
+   ═════════════════════════════════════ */
 
 .btn-primary {
-    -fx-background-color: #1a2744;
-    -fx-text-fill: #c9a84c;
+    -fx-background-color: #121212;
+    -fx-text-fill: #c6a75e;
     -fx-font-weight: bold;
-    -fx-background-radius: 7;
-    -fx-padding: 9 20 9 20;
-    -fx-cursor: hand;
-    -fx-font-size: 13px;
+    -fx-background-radius: 6;
+    -fx-padding: 9 18;
 }
 
 .btn-primary:hover {
-    -fx-background-color: #2c3e6b;
-    -fx-effect: dropshadow(gaussian, rgba(26,39,68,0.3), 8, 0, 0, 2);
-}
-
-.btn-primary:pressed {
-    -fx-background-color: #111d38;
+    -fx-background-color: #1c1c1c;
 }
 
 .btn-secondary {
-    -fx-background-color: #c9a84c;
-    -fx-text-fill: #1a2744;
+    -fx-background-color: #c6a75e;
+    -fx-text-fill: #121212;
     -fx-font-weight: bold;
-    -fx-background-radius: 7;
-    -fx-padding: 9 20 9 20;
-    -fx-cursor: hand;
-    -fx-font-size: 13px;
+    -fx-background-radius: 6;
+    -fx-padding: 9 18;
 }
 
-.btn-secondary:hover {
-    -fx-background-color: #b8943f;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 6, 0, 0, 1);
-}
-
-.btn-ghost {
-    -fx-background-color: transparent;
-    -fx-border-color: #cbd5e0;
-    -fx-border-radius: 7;
-    -fx-background-radius: 7;
-    -fx-text-fill: #4a5568;
-    -fx-padding: 8 18 8 18;
-    -fx-cursor: hand;
-    -fx-font-size: 13px;
-}
-
-.btn-ghost:hover {
-    -fx-background-color: #e8edf5;
-}
-
-/* ════════════════════════════════════════════════════════════════
-   TOOLBAR (filter/search bar)
-   ════════════════════════════════════════════════════════════════ */
-
-.toolbar {
-    -fx-background-color: #ffffff;
-    -fx-background-radius: 8;
-    -fx-padding: 10 14 10 14;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 6, 0, 0, 1);
-}
-
-.check-toolbar {
-    -fx-font-size: 13px;
-    -fx-text-fill: #2c3e6b;
-}
-
-/* ════════════════════════════════════════════════════════════════
-   TABLES
-   ════════════════════════════════════════════════════════════════ */
+/* ═════════════════════════════════════
+   TABLE
+   ═════════════════════════════════════ */
 
 .table-styled {
     -fx-background-color: #ffffff;
-    -fx-background-radius: 8;
-    -fx-border-radius: 8;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.07), 8, 0, 0, 2);
+    -fx-border-color: #eee;
+    -fx-border-radius: 6;
 }
 
 .table-styled .column-header-background {
-    -fx-background-color: #1a2744;
-    -fx-background-radius: 8 8 0 0;
+    -fx-background-color: #121212;
 }
 
 .table-styled .column-header .label {
-    -fx-text-fill: #c9a84c;
+    -fx-text-fill: #c6a75e;
     -fx-font-weight: bold;
     -fx-font-size: 12px;
-    -fx-padding: 10 8 10 8;
 }
 
 .table-styled .table-row-cell {
-    -fx-border-color: transparent transparent #edf2f7 transparent;
+    -fx-border-color: transparent transparent #f0f0f0 transparent;
 }
 
 .table-styled .table-row-cell:even {
-    -fx-background-color: #f8fafc;
+    -fx-background-color: #fcfcfc;
 }
 
 .table-styled .table-row-cell:odd {
@@ -335,113 +151,116 @@
 }
 
 .table-styled .table-row-cell:selected {
-    -fx-background-color: #e8edf5;
-    -fx-text-fill: #1a2744;
+    -fx-background-color: #f3f3f3;
 }
 
-.table-styled .table-row-cell:hover {
-    -fx-background-color: #eef2f8;
-}
-
-.table-placeholder {
-    -fx-text-fill: #a0aec0;
-    -fx-font-style: italic;
-}
-
-/* ════════════════════════════════════════════════════════════════
+/* ═════════════════════════════════════
    PACKAGE CARDS
-   ════════════════════════════════════════════════════════════════ */
+   ═════════════════════════════════════ */
 
 .package-card {
+    -fx-background-color: #ffffff;
     -fx-background-radius: 10;
-    -fx-padding: 16 18 16 18;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 8, 0, 0, 2);
-}
-
-.package-basic {
-    -fx-background-color: linear-gradient(to bottom right, #e8f5e9, #c8e6c9);
-}
-
-.package-premium {
-    -fx-background-color: linear-gradient(to bottom right, #fff8e1, #ffecb3);
+    -fx-padding: 18;
+    -fx-border-color: #eee;
+    -fx-border-radius: 10;
 }
 
 .package-luxury {
-    -fx-background-color: linear-gradient(to bottom right, #ede7f6, #d1c4e9);
+    -fx-background-color: #121212;
+    -fx-text-fill: #c6a75e;
 }
 
 .pkg-title {
-    -fx-font-size: 15px;
+    -fx-font-size: 14px;
     -fx-font-weight: bold;
-    -fx-text-fill: #1a2744;
 }
 
 .pkg-desc {
     -fx-font-size: 12px;
-    -fx-text-fill: #4a5568;
+    -fx-text-fill: #666;
 }
 
 .pkg-cost {
-    -fx-font-size: 18px;
+    -fx-font-size: 16px;
     -fx-font-weight: bold;
-    -fx-text-fill: #1a2744;
-    -fx-padding: 4 0 0 0;
 }
 
-/* ════════════════════════════════════════════════════════════════
+/* ═════════════════════════════════════
    BILLING
-   ════════════════════════════════════════════════════════════════ */
-
-.bill-label {
-    -fx-font-size: 12px;
-    -fx-text-fill: #718096;
-    -fx-font-weight: bold;
-}
-
-.bill-value {
-    -fx-font-size: 13px;
-    -fx-text-fill: #2c3e50;
-}
-
-.bill-total-label {
-    -fx-font-size: 14px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #1a2744;
-}
+   ═════════════════════════════════════ */
 
 .bill-total-value {
     -fx-font-size: 20px;
     -fx-font-weight: bold;
-    -fx-text-fill: #c9a84c;
+    -fx-text-fill: #c6a75e;
 }
 
-.bill-textarea {
-    -fx-font-family: "Courier New", Courier, monospace;
-    -fx-font-size: 12px;
-    -fx-background-color: #1a2744;
-    -fx-text-fill: #c9a84c;
-    -fx-background-radius: 6;
-    -fx-border-radius: 6;
-    -fx-padding: 10;
+/* ── GLOBAL DARK THEME ── */
+
+.root {
+    -fx-background-color: #121212;
+    -fx-text-fill: #ffffff;
 }
 
-/* ════════════════════════════════════════════════════════════════
-   MISC
-   ════════════════════════════════════════════════════════════════ */
+/* All text */
+.label {
+    -fx-text-fill: #ffffff;
+}
 
-.birthday-label {
-    -fx-font-size: 13px;
-    -fx-text-fill: #e67e22;
+/* Buttons */
+.button {
+    -fx-text-fill: #ffffff;
+}
+
+/* TextFields, ComboBox, etc */
+.text-field,
+.combo-box,
+.date-picker {
+    -fx-background-color: #1e1e1e;
+    -fx-text-fill: #ffffff;
+    -fx-border-color: #333;
+}
+
+/* TextArea */
+.text-area {
+    -fx-control-inner-background: #1e1e1e;
+    -fx-text-fill: #ffffff;
+}
+
+/* Cards (VERY IMPORTANT) */
+.card {
+    -fx-background-color: #1c1c1c;
+    -fx-border-color: #2a2a2a;
+}
+
+.package-card {
+    -fx-background-color: #1c1c1c;
+    -fx-border-color: #2a2a2a;
+    -fx-padding: 16;
+}
+
+.pkg-title {
+    -fx-text-fill: #c6a75e;
     -fx-font-weight: bold;
 }
 
-.preview-label {
-    -fx-font-size: 12px;
-    -fx-text-fill: #4a5568;
-    -fx-font-style: italic;
+.pkg-cost {
+    -fx-text-fill: #c6a75e;
 }
 
-.status-label {
-    -fx-font-size: 13px;
-    -fx-wrap-text: true;
+.combo-styled {
+    -fx-background-color: #1e1e1e;
+    -fx-text-fill: white;
+}
+
+.btn-primary {
+    -fx-background-color: #c6a75e;
+    -fx-text-fill: black;
+}
+
+.btn-ghost {
+    -fx-background-color: transparent;
+    -fx-border-color: #c6a75e;
+    -fx-text-fill: #c6a75e;
 }

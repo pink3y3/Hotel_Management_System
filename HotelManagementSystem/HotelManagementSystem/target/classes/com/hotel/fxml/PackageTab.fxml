@@ -1,95 +1,134 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.geometry.Insets?>
 
-<!--
-  PackageTab.fxml  —  Packages tab content
-  Controller: PackageController
--->
-<VBox xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.hotel.controller.PackageController"
-      styleClass="tab-content" spacing="16">
-    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+<VBox spacing="20"
+      styleClass="tab-content"
+      xmlns="http://javafx.com/javafx/17.0.12"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.hotel.controller.PackageController">
 
-    <!-- ── Package Cards ─────────────────────────────────────────── -->
+    <padding>
+        <Insets top="24" right="24" bottom="24" left="24"/>
+    </padding>
+
+    <!-- ── Package Cards ───────────────────────── -->
     <Label text="Available Packages" styleClass="card-title"/>
 
-    <HBox spacing="16">
+    <HBox spacing="20">
+
         <!-- BASIC -->
-        <VBox styleClass="package-card package-basic" spacing="8" HBox.hgrow="ALWAYS">
-            <Label text="🌿  BASIC"   styleClass="pkg-title"/>
-            <Label fx:id="basicDescLabel" text="" styleClass="pkg-desc" wrapText="true"/>
-            <Label fx:id="basicCostLabel" text="" styleClass="pkg-cost"/>
+        <VBox spacing="10"
+              styleClass="package-card package-basic"
+              HBox.hgrow="ALWAYS">
+            <Label text="🌿 BASIC" styleClass="pkg-title"/>
+            <Label fx:id="basicDescLabel" styleClass="pkg-desc" wrapText="true"/>
+            <Label fx:id="basicCostLabel" styleClass="pkg-cost"/>
         </VBox>
 
         <!-- PREMIUM -->
-        <VBox styleClass="package-card package-premium" spacing="8" HBox.hgrow="ALWAYS">
-            <Label text="⭐  PREMIUM"   styleClass="pkg-title"/>
-            <Label fx:id="premiumDescLabel" text="" styleClass="pkg-desc" wrapText="true"/>
-            <Label fx:id="premiumCostLabel" text="" styleClass="pkg-cost"/>
+        <VBox spacing="10"
+              styleClass="package-card package-premium"
+              HBox.hgrow="ALWAYS">
+            <Label text="⭐ PREMIUM" styleClass="pkg-title"/>
+            <Label fx:id="premiumDescLabel" styleClass="pkg-desc" wrapText="true"/>
+            <Label fx:id="premiumCostLabel" styleClass="pkg-cost"/>
         </VBox>
 
         <!-- LUXURY -->
-        <VBox styleClass="package-card package-luxury" spacing="8" HBox.hgrow="ALWAYS">
-            <Label text="💎  LUXURY"   styleClass="pkg-title"/>
-            <Label fx:id="luxuryDescLabel" text="" styleClass="pkg-desc" wrapText="true"/>
-            <Label fx:id="luxuryCostLabel" text="" styleClass="pkg-cost"/>
+        <VBox spacing="10"
+              styleClass="package-card package-luxury"
+              HBox.hgrow="ALWAYS">
+            <Label text="💎 LUXURY" styleClass="pkg-title"/>
+            <Label fx:id="luxuryDescLabel" styleClass="pkg-desc" wrapText="true"/>
+            <Label fx:id="luxuryCostLabel" styleClass="pkg-cost"/>
         </VBox>
+
     </HBox>
 
-    <!-- ── Assign Package ────────────────────────────────────────── -->
-    <VBox styleClass="card" spacing="14">
+    <!-- ── Assign Package ───────────────────────── -->
+    <VBox spacing="16" styleClass="card">
+
         <Label text="Assign Package to Booking" styleClass="card-title"/>
 
         <GridPane hgap="16" vgap="12">
+
             <columnConstraints>
-                <ColumnConstraints minWidth="130" prefWidth="150"/>
+                <ColumnConstraints prefWidth="150"/>
                 <ColumnConstraints hgrow="ALWAYS"/>
-                <ColumnConstraints minWidth="130" prefWidth="150"/>
+                <ColumnConstraints prefWidth="150"/>
                 <ColumnConstraints hgrow="ALWAYS"/>
             </columnConstraints>
 
             <Label text="Select Booking" styleClass="field-label"
-                   GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-            <ComboBox fx:id="bookingCombo" maxWidth="Infinity"
+                   GridPane.rowIndex="0"/>
+
+            <ComboBox fx:id="bookingCombo"
                       styleClass="combo-styled"
-                      GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                      maxWidth="Infinity"
+                      GridPane.columnIndex="1"
+                      GridPane.rowIndex="0"/>
 
             <Label text="Package Type" styleClass="field-label"
-                   GridPane.columnIndex="2" GridPane.rowIndex="0"/>
-            <ComboBox fx:id="packageTypeCombo" maxWidth="Infinity"
+                   GridPane.columnIndex="2"
+                   GridPane.rowIndex="0"/>
+
+            <ComboBox fx:id="packageTypeCombo"
                       styleClass="combo-styled"
-                      GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+                      maxWidth="Infinity"
+                      GridPane.columnIndex="3"
+                      GridPane.rowIndex="0"/>
 
-            <!-- Preview labels -->
+            <!-- Preview -->
             <Label text="Description" styleClass="field-label"
-                   GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-            <Label fx:id="packageDescLabel" text="" wrapText="true"
-                   styleClass="preview-label"
-                   GridPane.columnIndex="1" GridPane.rowIndex="1"
-                   GridPane.columnSpan="2"/>
+                   GridPane.rowIndex="1"/>
 
-            <Label fx:id="packageCostLabel" text="" styleClass="pkg-cost"
-                   GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+            <Label fx:id="packageDescLabel"
+                   styleClass="preview-label"
+                   wrapText="true"
+                   GridPane.columnIndex="1"
+                   GridPane.columnSpan="2"
+                   GridPane.rowIndex="1"/>
+
+            <Label fx:id="packageCostLabel"
+                   styleClass="pkg-cost"
+                   GridPane.columnIndex="3"
+                   GridPane.rowIndex="1"/>
+
         </GridPane>
 
-        <HBox spacing="10">
-            <Button text="✅  Assign Package" onAction="#handleAssignPackage" styleClass="btn-primary"/>
-            <Button text="↺  Refresh"         onAction="#handleRefresh"       styleClass="btn-ghost"/>
+        <HBox spacing="12">
+            <Button text="✅ Assign Package"
+                    onAction="#handleAssignPackage"
+                    styleClass="btn-primary"/>
+
+            <Button text="↺ Refresh"
+                    onAction="#handleRefresh"
+                    styleClass="btn-ghost"/>
         </HBox>
+
     </VBox>
 
-    <!-- ── Assignment History ────────────────────────────────────── -->
+    <!-- ── History ───────────────────────── -->
     <Label text="Package Assignment History" styleClass="section-title"/>
-    <TableView fx:id="assignTable" VBox.vgrow="ALWAYS" styleClass="table-styled">
+
+    <TableView fx:id="assignTable"
+               styleClass="table-styled"
+               VBox.vgrow="ALWAYS">
+
         <columns>
             <TableColumn fx:id="colAssignBookingId" text="Booking ID" prefWidth="120"/>
-            <TableColumn fx:id="colAssignCustomer"  text="Customer"   prefWidth="180"/>
-            <TableColumn fx:id="colAssignRoom"      text="Room"       prefWidth="80"/>
-            <TableColumn fx:id="colAssignPackage"   text="Package"    prefWidth="120"/>
+            <TableColumn fx:id="colAssignCustomer" text="Customer" prefWidth="180"/>
+            <TableColumn fx:id="colAssignRoom" text="Room" prefWidth="80"/>
+            <TableColumn fx:id="colAssignPackage" text="Package" prefWidth="120"/>
         </columns>
-        <placeholder><Label text="No package assignments yet." styleClass="table-placeholder"/></placeholder>
+
+        <placeholder>
+            <Label text="No package assignments yet." styleClass="table-placeholder"/>
+        </placeholder>
+
     </TableView>
+
 </VBox>

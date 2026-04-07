@@ -1,360 +1,149 @@
-/* ═══════════════════════════════════════════════════════════════
-   hotel.css  —  The Stanley Hotel Management System
-   ═══════════════════════════════════════════════════════════════ */
+/* ═══════════════════════════════════════════════════════
+   CLASSIC LUXURY THEME — Black • White • Gold
+   ═══════════════════════════════════════════════════════ */
 
-/* ── Global colour palette ─────────────────────────────────────── */
-/* Deep Charcoal: #1b1b2f  |  Royal Gold: #d4a843  |  Emerald: #2ecc71
-   Crimson:       #e74c3c  |  Ivory:      #faf9f6  |  Card: #ffffff
-   Accent Navy:   #162447  |  Warm Grey:  #e8e4df                   */
+/* Palette
+   Black: #121212
+   Soft Black: #1c1c1c
+   Gold: #c6a75e
+   Light BG: #fafafa
+*/
 
-/* ── Root / background ─────────────────────────────────────────── */
+/* ── Root ───────────────────────────── */
 .root {
-    -fx-font-family: "Georgia", "Palatino Linotype", "Book Antiqua", serif;
+    -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     -fx-font-size: 13px;
-    -fx-background-color: #faf9f6;
+    -fx-background-color: #fafafa;
 }
 
-/* ════════════════════════════════════════════════════════════════
-   LOGIN SCREEN
-   ════════════════════════════════════════════════════════════════ */
-
-.login-root {
-    -fx-background-color: linear-gradient(to bottom, #1b1b2f 0%, #162447 50%, #1f4068 100%);
-    -fx-min-height: 400px;
-}
-
-.login-header {
-    -fx-padding: 32 0 24 0;
-}
-
-.login-hotel-icon {
-    -fx-font-size: 48px;
-    -fx-effect: dropshadow(gaussian, rgba(212,168,67,0.6), 12, 0, 0, 0);
-}
-
-.login-title {
-    -fx-font-size: 28px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #d4a843;
-    -fx-letter-spacing: 4px;
-}
-
-.login-subtitle {
-    -fx-font-size: 13px;
-    -fx-text-fill: #b0b8c8;
-    -fx-letter-spacing: 2px;
-}
-
-.login-card {
-    -fx-background-color: #ffffff;
-    -fx-background-radius: 16;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.45), 30, 0, 0, 8);
-    -fx-max-width: 380px;
-    -fx-min-width: 340px;
-}
-
-.login-card-title {
-    -fx-font-size: 18px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #1b1b2f;
-    -fx-padding: 0 0 8 0;
-}
-
-.login-hint {
-    -fx-font-size: 11px;
-    -fx-text-fill: #a0aec0;
-    -fx-font-style: italic;
-}
-
-/* ════════════════════════════════════════════════════════════════
-   DASHBOARD CHROME
-   ════════════════════════════════════════════════════════════════ */
-
-.dashboard-root {
-    -fx-background-color: #faf9f6;
-}
+/* ═════════════════════════════════════
+   HEADER
+   ═════════════════════════════════════ */
 
 .dashboard-header {
-    -fx-background-color: linear-gradient(to right, #1b1b2f, #162447, #1f4068);
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 12, 0, 0, 3);
-}
-
-.header-icon {
-    -fx-font-size: 28px;
-    -fx-effect: dropshadow(gaussian, rgba(212,168,67,0.5), 8, 0, 0, 0);
+    -fx-background-color: #121212;
+    -fx-padding: 12 20;
+    -fx-border-color: transparent transparent #c6a75e transparent;
+    -fx-border-width: 0 0 1 0;
 }
 
 .header-title {
-    -fx-font-size: 20px;
+    -fx-text-fill: #c6a75e;
+    -fx-font-size: 17px;
     -fx-font-weight: bold;
-    -fx-text-fill: #d4a843;
-    -fx-letter-spacing: 3px;
 }
 
 .header-sub {
+    -fx-text-fill: #aaaaaa;
     -fx-font-size: 11px;
-    -fx-text-fill: #b0b8c8;
-    -fx-letter-spacing: 1.5px;
 }
 
-/* ── Tab pane ───────────────────────────────────────────────────── */
-
-.main-tab-pane > .tab-header-area > .headers-region > .tab {
-    -fx-background-color: #e8e4df;
-    -fx-background-radius: 8 8 0 0;
-    -fx-padding: 10 22 10 22;
-    -fx-font-size: 13px;
-    -fx-font-weight: normal;
-    -fx-text-fill: #4a5568;
-    -fx-cursor: hand;
-}
-
-.main-tab-pane > .tab-header-area > .headers-region > .tab:hover {
-    -fx-background-color: #d4d0cb;
-}
-
-.main-tab-pane > .tab-header-area > .headers-region > .tab:selected {
-    -fx-background-color: #1b1b2f;
-    -fx-text-fill: #d4a843;
-    -fx-font-weight: bold;
-    -fx-effect: dropshadow(gaussian, rgba(212,168,67,0.3), 6, 0, 0, 1);
-}
-
-.main-tab-pane > .tab-header-area {
-    -fx-background-color: #e8e4df;
-    -fx-padding: 6 0 0 0;
-}
-
-.main-tab-pane .tab-content-area {
-    -fx-background-color: #faf9f6;
-}
-
-/* ── Tab content wrapper ────────────────────────────────────────── */
-.tab-content {
-    -fx-background-color: #faf9f6;
-}
-
-/* ════════════════════════════════════════════════════════════════
+/* ═════════════════════════════════════
    CARDS
-   ════════════════════════════════════════════════════════════════ */
+   ═════════════════════════════════════ */
 
 .card {
     -fx-background-color: #ffffff;
-    -fx-background-radius: 14;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 14, 0, 0, 3);
-    -fx-padding: 22 24 22 24;
-    -fx-border-color: rgba(212,168,67,0.15);
-    -fx-border-radius: 14;
-    -fx-border-width: 1;
+    -fx-background-radius: 10;
+    -fx-padding: 20 22;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 10, 0, 0, 2);
 }
 
 .card-title {
-    -fx-font-size: 16px;
+    -fx-font-size: 15px;
     -fx-font-weight: bold;
-    -fx-text-fill: #1b1b2f;
-    -fx-padding: 0 0 8 0;
+    -fx-text-fill: #121212;
 }
 
 .section-title {
-    -fx-font-size: 15px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #162447;
+    -fx-font-size: 13px;
+    -fx-text-fill: #444;
+    -fx-font-weight: 600;
 }
 
-/* ════════════════════════════════════════════════════════════════
-   FORM CONTROLS
-   ════════════════════════════════════════════════════════════════ */
+/* ═════════════════════════════════════
+   FORM ELEMENTS
+   ═════════════════════════════════════ */
 
 .field-label {
     -fx-font-size: 12px;
+    -fx-text-fill: #555;
     -fx-font-weight: bold;
-    -fx-text-fill: #4a5568;
-    -fx-letter-spacing: 0.5px;
 }
 
-/* TextField */
 .text-field-styled {
-    -fx-background-color: #faf9f6;
-    -fx-border-color: #d1ccc5;
-    -fx-border-radius: 8;
-    -fx-background-radius: 8;
-    -fx-padding: 8 12 8 12;
-    -fx-font-size: 13px;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #ddd;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 8 10;
 }
 
 .text-field-styled:focused {
-    -fx-border-color: #d4a843;
-    -fx-background-color: #ffffff;
-    -fx-effect: dropshadow(gaussian, rgba(212,168,67,0.25), 8, 0, 0, 0);
-}
-
-/* ComboBox */
-.combo-styled {
-    -fx-background-color: #faf9f6;
-    -fx-border-color: #d1ccc5;
-    -fx-border-radius: 8;
-    -fx-background-radius: 8;
-    -fx-padding: 5 10 5 10;
-    -fx-font-size: 13px;
-}
-
-.combo-styled:focused {
-    -fx-border-color: #d4a843;
-    -fx-effect: dropshadow(gaussian, rgba(212,168,67,0.2), 6, 0, 0, 0);
+    -fx-border-color: #c6a75e;
 }
 
 /* DatePicker */
 .date-picker-styled {
-    -fx-background-color: #faf9f6;
-    -fx-border-color: #d1ccc5;
-    -fx-border-radius: 8;
-    -fx-background-radius: 8;
-    -fx-padding: 5 10 5 10;
-    -fx-font-size: 13px;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #ddd;
+    -fx-border-radius: 5;
 }
 
 .date-picker-styled:focused {
-    -fx-border-color: #d4a843;
-    -fx-effect: dropshadow(gaussian, rgba(212,168,67,0.2), 6, 0, 0, 0);
+    -fx-border-color: #c6a75e;
 }
 
-/* Style the pop-up calendar */
-.date-picker-popup > .month-year-pane {
-    -fx-background-color: #1b1b2f;
-}
-
-.date-picker-popup .spinner > .button > .left-arrow,
-.date-picker-popup .spinner > .button > .right-arrow {
-    -fx-background-color: #d4a843;
-}
-
-.date-picker-popup .day-cell:focused,
-.date-picker-popup .day-cell:hover {
-    -fx-background-color: #f0ece4;
-}
-
-.date-picker-popup .day-cell.today {
-    -fx-border-color: #d4a843;
-    -fx-border-width: 2;
-}
-
-.date-picker-popup .day-cell.selected {
-    -fx-background-color: #1b1b2f;
-    -fx-text-fill: #d4a843;
-}
-
-/* DatePicker text field inner part */
-.date-picker-styled > .text-field {
-    -fx-background-color: transparent;
-    -fx-border-width: 0;
-    -fx-padding: 3 6 3 6;
-}
-
-/* ════════════════════════════════════════════════════════════════
+/* ═════════════════════════════════════
    BUTTONS
-   ════════════════════════════════════════════════════════════════ */
+   ═════════════════════════════════════ */
 
 .btn-primary {
-    -fx-background-color: linear-gradient(to bottom, #1b1b2f, #162447);
-    -fx-text-fill: #d4a843;
+    -fx-background-color: #121212;
+    -fx-text-fill: #c6a75e;
     -fx-font-weight: bold;
-    -fx-background-radius: 10;
-    -fx-padding: 10 24 10 24;
-    -fx-cursor: hand;
-    -fx-font-size: 13px;
-    -fx-effect: dropshadow(gaussian, rgba(27,27,47,0.3), 6, 0, 0, 2);
+    -fx-background-radius: 6;
+    -fx-padding: 9 18;
 }
 
 .btn-primary:hover {
-    -fx-background-color: linear-gradient(to bottom, #162447, #1f4068);
-    -fx-effect: dropshadow(gaussian, rgba(27,27,47,0.5), 10, 0, 0, 3);
-}
-
-.btn-primary:pressed {
-    -fx-background-color: #111125;
+    -fx-background-color: #1c1c1c;
 }
 
 .btn-secondary {
-    -fx-background-color: linear-gradient(to bottom, #d4a843, #c49a3a);
-    -fx-text-fill: #1b1b2f;
+    -fx-background-color: #c6a75e;
+    -fx-text-fill: #121212;
     -fx-font-weight: bold;
-    -fx-background-radius: 10;
-    -fx-padding: 10 24 10 24;
-    -fx-cursor: hand;
-    -fx-font-size: 13px;
-    -fx-effect: dropshadow(gaussian, rgba(212,168,67,0.3), 6, 0, 0, 2);
+    -fx-background-radius: 6;
+    -fx-padding: 9 18;
 }
 
-.btn-secondary:hover {
-    -fx-background-color: linear-gradient(to bottom, #c49a3a, #b88d30);
-    -fx-effect: dropshadow(gaussian, rgba(212,168,67,0.5), 8, 0, 0, 2);
-}
-
-.btn-ghost {
-    -fx-background-color: transparent;
-    -fx-border-color: #d1ccc5;
-    -fx-border-radius: 10;
-    -fx-background-radius: 10;
-    -fx-text-fill: #4a5568;
-    -fx-padding: 9 20 9 20;
-    -fx-cursor: hand;
-    -fx-font-size: 13px;
-}
-
-.btn-ghost:hover {
-    -fx-background-color: #f0ece4;
-    -fx-border-color: #d4a843;
-}
-
-/* ════════════════════════════════════════════════════════════════
-   TOOLBAR (filter/search bar)
-   ════════════════════════════════════════════════════════════════ */
-
-.toolbar {
-    -fx-background-color: #ffffff;
-    -fx-background-radius: 10;
-    -fx-padding: 12 16 12 16;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.07), 8, 0, 0, 2);
-    -fx-border-color: rgba(212,168,67,0.1);
-    -fx-border-radius: 10;
-    -fx-border-width: 1;
-}
-
-.check-toolbar {
-    -fx-font-size: 13px;
-    -fx-text-fill: #162447;
-}
-
-/* ════════════════════════════════════════════════════════════════
-   TABLES
-   ════════════════════════════════════════════════════════════════ */
+/* ═════════════════════════════════════
+   TABLE
+   ═════════════════════════════════════ */
 
 .table-styled {
     -fx-background-color: #ffffff;
-    -fx-background-radius: 12;
-    -fx-border-radius: 12;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.09), 10, 0, 0, 3);
+    -fx-border-color: #eee;
+    -fx-border-radius: 6;
 }
 
 .table-styled .column-header-background {
-    -fx-background-color: linear-gradient(to right, #1b1b2f, #162447);
-    -fx-background-radius: 12 12 0 0;
+    -fx-background-color: #121212;
 }
 
 .table-styled .column-header .label {
-    -fx-text-fill: #d4a843;
+    -fx-text-fill: #c6a75e;
     -fx-font-weight: bold;
     -fx-font-size: 12px;
-    -fx-padding: 12 10 12 10;
-    -fx-letter-spacing: 0.5px;
 }
 
 .table-styled .table-row-cell {
-    -fx-border-color: transparent transparent #f0ece4 transparent;
+    -fx-border-color: transparent transparent #f0f0f0 transparent;
 }
 
 .table-styled .table-row-cell:even {
-    -fx-background-color: #faf9f6;
+    -fx-background-color: #fcfcfc;
 }
 
 .table-styled .table-row-cell:odd {
@@ -362,140 +151,86 @@
 }
 
 .table-styled .table-row-cell:selected {
-    -fx-background-color: #f0ece4;
-    -fx-text-fill: #1b1b2f;
+    -fx-background-color: #f3f3f3;
 }
 
-.table-styled .table-row-cell:hover {
-    -fx-background-color: #f5f0e8;
-}
-
-.table-placeholder {
-    -fx-text-fill: #a0aec0;
-    -fx-font-style: italic;
-}
-
-/* ════════════════════════════════════════════════════════════════
+/* ═════════════════════════════════════
    PACKAGE CARDS
-   ════════════════════════════════════════════════════════════════ */
+   ═════════════════════════════════════ */
 
 .package-card {
-    -fx-background-radius: 14;
-    -fx-padding: 20 22 20 22;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 10, 0, 0, 3);
-    -fx-border-radius: 14;
-    -fx-border-width: 1;
-}
-
-.package-basic {
-    -fx-background-color: linear-gradient(to bottom right, #f0f9f0, #d4edda);
-    -fx-border-color: rgba(46,204,113,0.3);
-}
-
-.package-premium {
-    -fx-background-color: linear-gradient(to bottom right, #fdf8e8, #fce8a0);
-    -fx-border-color: rgba(212,168,67,0.4);
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 10;
+    -fx-padding: 18;
+    -fx-border-color: #eee;
+    -fx-border-radius: 10;
 }
 
 .package-luxury {
-    -fx-background-color: linear-gradient(to bottom right, #f3eef8, #d8cce8);
-    -fx-border-color: rgba(142,68,173,0.3);
+    -fx-background-color: #121212;
+    -fx-text-fill: #c6a75e;
 }
 
 .pkg-title {
-    -fx-font-size: 16px;
+    -fx-font-size: 14px;
     -fx-font-weight: bold;
-    -fx-text-fill: #1b1b2f;
 }
 
 .pkg-desc {
     -fx-font-size: 12px;
-    -fx-text-fill: #4a5568;
-    -fx-line-spacing: 2;
+    -fx-text-fill: #666;
 }
 
 .pkg-cost {
-    -fx-font-size: 20px;
+    -fx-font-size: 16px;
     -fx-font-weight: bold;
-    -fx-text-fill: #1b1b2f;
-    -fx-padding: 6 0 0 0;
 }
 
-/* ════════════════════════════════════════════════════════════════
+/* ═════════════════════════════════════
    BILLING
-   ════════════════════════════════════════════════════════════════ */
-
-.bill-label {
-    -fx-font-size: 12px;
-    -fx-text-fill: #718096;
-    -fx-font-weight: bold;
-}
-
-.bill-value {
-    -fx-font-size: 13px;
-    -fx-text-fill: #2c3e50;
-}
-
-.bill-total-label {
-    -fx-font-size: 15px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #1b1b2f;
-}
+   ═════════════════════════════════════ */
 
 .bill-total-value {
-    -fx-font-size: 22px;
+    -fx-font-size: 20px;
     -fx-font-weight: bold;
-    -fx-text-fill: #d4a843;
-    -fx-effect: dropshadow(gaussian, rgba(212,168,67,0.3), 4, 0, 0, 0);
+    -fx-text-fill: #c6a75e;
 }
 
-.bill-textarea {
-    -fx-font-family: "Courier New", Courier, monospace;
-    -fx-font-size: 12px;
-    -fx-background-color: #1b1b2f;
-    -fx-text-fill: #d4a843;
-    -fx-background-radius: 10;
-    -fx-border-radius: 10;
-    -fx-padding: 14;
+/* ── GLOBAL DARK THEME ── */
+
+.root {
+    -fx-background-color: #121212;
+    -fx-text-fill: #ffffff;
 }
 
-/* ════════════════════════════════════════════════════════════════
-   MISC
-   ════════════════════════════════════════════════════════════════ */
-
-.birthday-label {
-    -fx-font-size: 13px;
-    -fx-text-fill: #e67e22;
-    -fx-font-weight: bold;
+/* All text */
+.label {
+    -fx-text-fill: #ffffff;
 }
 
-.preview-label {
-    -fx-font-size: 12px;
-    -fx-text-fill: #4a5568;
-    -fx-font-style: italic;
+/* Buttons */
+.button {
+    -fx-text-fill: #ffffff;
 }
 
-.status-label {
-    -fx-font-size: 13px;
-    -fx-wrap-text: true;
+/* TextFields, ComboBox, etc */
+.text-field,
+.combo-box,
+.date-picker {
+    -fx-background-color: #1e1e1e;
+    -fx-text-fill: #ffffff;
+    -fx-border-color: #333;
 }
 
-/* ════════════════════════════════════════════════════════════════
-   SCROLLBAR STYLING
-   ════════════════════════════════════════════════════════════════ */
-
-.scroll-bar:vertical .thumb,
-.scroll-bar:horizontal .thumb {
-    -fx-background-color: #d1ccc5;
-    -fx-background-radius: 8;
+/* TextArea */
+.text-area {
+    -fx-control-inner-background: #1e1e1e;
+    -fx-text-fill: #ffffff;
 }
 
-.scroll-bar:vertical .thumb:hover,
-.scroll-bar:horizontal .thumb:hover {
-    -fx-background-color: #d4a843;
+/* Cards (VERY IMPORTANT) */
+.card {
+    -fx-background-color: #1c1c1c;
+    -fx-border-color: #2a2a2a;
 }
 
-.scroll-bar:vertical .track,
-.scroll-bar:horizontal .track {
-    -fx-background-color: #faf9f6;
-}

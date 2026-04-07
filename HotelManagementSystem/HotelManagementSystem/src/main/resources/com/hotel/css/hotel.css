@@ -1,16 +1,17 @@
 /* ═══════════════════════════════════════════════════════════════
-   hotel.css  —  Horizon Hotel Management System
+   hotel.css  —  The Stanley Hotel Management System
    ═══════════════════════════════════════════════════════════════ */
 
 /* ── Global colour palette ─────────────────────────────────────── */
-/* Navy:   #1a2744  |  Gold:  #c9a84c  |  Green: #27ae60
-   Red:    #e74c3c  |  Grey:  #f4f6fa  |  Card:  #ffffff  */
+/* Deep Charcoal: #1b1b2f  |  Royal Gold: #d4a843  |  Emerald: #2ecc71
+   Crimson:       #e74c3c  |  Ivory:      #faf9f6  |  Card: #ffffff
+   Accent Navy:   #162447  |  Warm Grey:  #e8e4df                   */
 
 /* ── Root / background ─────────────────────────────────────────── */
 .root {
-    -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    -fx-font-family: "Georgia", "Palatino Linotype", "Book Antiqua", serif;
     -fx-font-size: 13px;
-    -fx-background-color: #f4f6fa;
+    -fx-background-color: #faf9f6;
 }
 
 /* ════════════════════════════════════════════════════════════════
@@ -18,48 +19,51 @@
    ════════════════════════════════════════════════════════════════ */
 
 .login-root {
-    -fx-background-color: linear-gradient(to bottom, #1a2744, #2c3e6b);
-    -fx-min-height: 360px;
+    -fx-background-color: linear-gradient(to bottom, #1b1b2f 0%, #162447 50%, #1f4068 100%);
+    -fx-min-height: 400px;
 }
 
 .login-header {
-    -fx-padding: 28 0 20 0;
+    -fx-padding: 32 0 24 0;
 }
 
 .login-hotel-icon {
-    -fx-font-size: 40px;
+    -fx-font-size: 48px;
+    -fx-effect: dropshadow(gaussian, rgba(212,168,67,0.6), 12, 0, 0, 0);
 }
 
 .login-title {
-    -fx-font-size: 26px;
+    -fx-font-size: 28px;
     -fx-font-weight: bold;
-    -fx-text-fill: #c9a84c;
-    -fx-letter-spacing: 3px;
+    -fx-text-fill: #d4a843;
+    -fx-letter-spacing: 4px;
 }
 
 .login-subtitle {
     -fx-font-size: 13px;
-    -fx-text-fill: #a0aec0;
+    -fx-text-fill: #b0b8c8;
+    -fx-letter-spacing: 2px;
 }
 
 .login-card {
     -fx-background-color: #ffffff;
-    -fx-background-radius: 12;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.35), 20, 0, 0, 6);
-    -fx-max-width: 360px;
-    -fx-min-width: 320px;
+    -fx-background-radius: 16;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.45), 30, 0, 0, 8);
+    -fx-max-width: 380px;
+    -fx-min-width: 340px;
 }
 
 .login-card-title {
-    -fx-font-size: 17px;
+    -fx-font-size: 18px;
     -fx-font-weight: bold;
-    -fx-text-fill: #1a2744;
-    -fx-padding: 0 0 6 0;
+    -fx-text-fill: #1b1b2f;
+    -fx-padding: 0 0 8 0;
 }
 
 .login-hint {
     -fx-font-size: 11px;
     -fx-text-fill: #a0aec0;
+    -fx-font-style: italic;
 }
 
 /* ════════════════════════════════════════════════════════════════
@@ -67,58 +71,67 @@
    ════════════════════════════════════════════════════════════════ */
 
 .dashboard-root {
-    -fx-background-color: #f4f6fa;
+    -fx-background-color: #faf9f6;
 }
 
 .dashboard-header {
-    -fx-background-color: linear-gradient(to right, #1a2744, #2c3e6b);
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 8, 0, 0, 2);
+    -fx-background-color: linear-gradient(to right, #1b1b2f, #162447, #1f4068);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 12, 0, 0, 3);
 }
 
 .header-icon {
-    -fx-font-size: 26px;
+    -fx-font-size: 28px;
+    -fx-effect: dropshadow(gaussian, rgba(212,168,67,0.5), 8, 0, 0, 0);
 }
 
 .header-title {
-    -fx-font-size: 18px;
+    -fx-font-size: 20px;
     -fx-font-weight: bold;
-    -fx-text-fill: #c9a84c;
-    -fx-letter-spacing: 2px;
+    -fx-text-fill: #d4a843;
+    -fx-letter-spacing: 3px;
 }
 
 .header-sub {
     -fx-font-size: 11px;
-    -fx-text-fill: #a0aec0;
+    -fx-text-fill: #b0b8c8;
+    -fx-letter-spacing: 1.5px;
 }
 
 /* ── Tab pane ───────────────────────────────────────────────────── */
 
 .main-tab-pane > .tab-header-area > .headers-region > .tab {
-    -fx-background-color: #e8edf5;
-    -fx-padding: 8 18 8 18;
+    -fx-background-color: #e8e4df;
+    -fx-background-radius: 8 8 0 0;
+    -fx-padding: 10 22 10 22;
     -fx-font-size: 13px;
+    -fx-font-weight: normal;
     -fx-text-fill: #4a5568;
     -fx-cursor: hand;
 }
 
+.main-tab-pane > .tab-header-area > .headers-region > .tab:hover {
+    -fx-background-color: #d4d0cb;
+}
+
 .main-tab-pane > .tab-header-area > .headers-region > .tab:selected {
-    -fx-background-color: #1a2744;
-    -fx-text-fill: #c9a84c;
+    -fx-background-color: #1b1b2f;
+    -fx-text-fill: #d4a843;
     -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(212,168,67,0.3), 6, 0, 0, 1);
 }
 
 .main-tab-pane > .tab-header-area {
-    -fx-background-color: #dde3ef;
-    -fx-padding: 4 0 0 0;
+    -fx-background-color: #e8e4df;
+    -fx-padding: 6 0 0 0;
 }
 
 .main-tab-pane .tab-content-area {
-    -fx-background-color: #f4f6fa;
+    -fx-background-color: #faf9f6;
 }
 
 /* ── Tab content wrapper ────────────────────────────────────────── */
 .tab-content {
-    -fx-background-color: #f4f6fa;
+    -fx-background-color: #faf9f6;
 }
 
 /* ════════════════════════════════════════════════════════════════
@@ -127,22 +140,25 @@
 
 .card {
     -fx-background-color: #ffffff;
-    -fx-background-radius: 10;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 10, 0, 0, 2);
-    -fx-padding: 18 20 18 20;
+    -fx-background-radius: 14;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 14, 0, 0, 3);
+    -fx-padding: 22 24 22 24;
+    -fx-border-color: rgba(212,168,67,0.15);
+    -fx-border-radius: 14;
+    -fx-border-width: 1;
 }
 
 .card-title {
-    -fx-font-size: 15px;
+    -fx-font-size: 16px;
     -fx-font-weight: bold;
-    -fx-text-fill: #1a2744;
-    -fx-padding: 0 0 6 0;
+    -fx-text-fill: #1b1b2f;
+    -fx-padding: 0 0 8 0;
 }
 
 .section-title {
-    -fx-font-size: 14px;
+    -fx-font-size: 15px;
     -fx-font-weight: bold;
-    -fx-text-fill: #2c3e6b;
+    -fx-text-fill: #162447;
 }
 
 /* ════════════════════════════════════════════════════════════════
@@ -153,74 +169,78 @@
     -fx-font-size: 12px;
     -fx-font-weight: bold;
     -fx-text-fill: #4a5568;
+    -fx-letter-spacing: 0.5px;
 }
 
 /* TextField */
 .text-field-styled {
-    -fx-background-color: #f8fafc;
-    -fx-border-color: #cbd5e0;
-    -fx-border-radius: 6;
-    -fx-background-radius: 6;
-    -fx-padding: 7 10 7 10;
+    -fx-background-color: #faf9f6;
+    -fx-border-color: #d1ccc5;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 8 12 8 12;
     -fx-font-size: 13px;
 }
 
 .text-field-styled:focused {
-    -fx-border-color: #1a2744;
+    -fx-border-color: #d4a843;
     -fx-background-color: #ffffff;
-    -fx-effect: dropshadow(gaussian, rgba(26,39,68,0.2), 6, 0, 0, 0);
+    -fx-effect: dropshadow(gaussian, rgba(212,168,67,0.25), 8, 0, 0, 0);
 }
 
 /* ComboBox */
 .combo-styled {
-    -fx-background-color: #f8fafc;
-    -fx-border-color: #cbd5e0;
-    -fx-border-radius: 6;
-    -fx-background-radius: 6;
-    -fx-padding: 4 8 4 8;
+    -fx-background-color: #faf9f6;
+    -fx-border-color: #d1ccc5;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 5 10 5 10;
     -fx-font-size: 13px;
 }
 
 .combo-styled:focused {
-    -fx-border-color: #1a2744;
+    -fx-border-color: #d4a843;
+    -fx-effect: dropshadow(gaussian, rgba(212,168,67,0.2), 6, 0, 0, 0);
 }
 
-/* DatePicker — shares the same look as TextField for consistency */
+/* DatePicker */
 .date-picker-styled {
-    -fx-background-color: #f8fafc;
-    -fx-border-color: #cbd5e0;
-    -fx-border-radius: 6;
-    -fx-background-radius: 6;
-    -fx-padding: 4 8 4 8;
+    -fx-background-color: #faf9f6;
+    -fx-border-color: #d1ccc5;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 5 10 5 10;
     -fx-font-size: 13px;
 }
 
 .date-picker-styled:focused {
-    -fx-border-color: #1a2744;
+    -fx-border-color: #d4a843;
+    -fx-effect: dropshadow(gaussian, rgba(212,168,67,0.2), 6, 0, 0, 0);
 }
 
 /* Style the pop-up calendar */
 .date-picker-popup > .month-year-pane {
-    -fx-background-color: #1a2744;
+    -fx-background-color: #1b1b2f;
 }
 
 .date-picker-popup .spinner > .button > .left-arrow,
 .date-picker-popup .spinner > .button > .right-arrow {
-    -fx-background-color: #c9a84c;
+    -fx-background-color: #d4a843;
 }
 
 .date-picker-popup .day-cell:focused,
 .date-picker-popup .day-cell:hover {
-    -fx-background-color: #e8edf5;
+    -fx-background-color: #f0ece4;
 }
 
 .date-picker-popup .day-cell.today {
-    -fx-border-color: #c9a84c;
+    -fx-border-color: #d4a843;
+    -fx-border-width: 2;
 }
 
 .date-picker-popup .day-cell.selected {
-    -fx-background-color: #1a2744;
-    -fx-text-fill: #c9a84c;
+    -fx-background-color: #1b1b2f;
+    -fx-text-fill: #d4a843;
 }
 
 /* DatePicker text field inner part */
@@ -235,52 +255,55 @@
    ════════════════════════════════════════════════════════════════ */
 
 .btn-primary {
-    -fx-background-color: #1a2744;
-    -fx-text-fill: #c9a84c;
+    -fx-background-color: linear-gradient(to bottom, #1b1b2f, #162447);
+    -fx-text-fill: #d4a843;
     -fx-font-weight: bold;
-    -fx-background-radius: 7;
-    -fx-padding: 9 20 9 20;
+    -fx-background-radius: 10;
+    -fx-padding: 10 24 10 24;
     -fx-cursor: hand;
     -fx-font-size: 13px;
+    -fx-effect: dropshadow(gaussian, rgba(27,27,47,0.3), 6, 0, 0, 2);
 }
 
 .btn-primary:hover {
-    -fx-background-color: #2c3e6b;
-    -fx-effect: dropshadow(gaussian, rgba(26,39,68,0.3), 8, 0, 0, 2);
+    -fx-background-color: linear-gradient(to bottom, #162447, #1f4068);
+    -fx-effect: dropshadow(gaussian, rgba(27,27,47,0.5), 10, 0, 0, 3);
 }
 
 .btn-primary:pressed {
-    -fx-background-color: #111d38;
+    -fx-background-color: #111125;
 }
 
 .btn-secondary {
-    -fx-background-color: #c9a84c;
-    -fx-text-fill: #1a2744;
+    -fx-background-color: linear-gradient(to bottom, #d4a843, #c49a3a);
+    -fx-text-fill: #1b1b2f;
     -fx-font-weight: bold;
-    -fx-background-radius: 7;
-    -fx-padding: 9 20 9 20;
+    -fx-background-radius: 10;
+    -fx-padding: 10 24 10 24;
     -fx-cursor: hand;
     -fx-font-size: 13px;
+    -fx-effect: dropshadow(gaussian, rgba(212,168,67,0.3), 6, 0, 0, 2);
 }
 
 .btn-secondary:hover {
-    -fx-background-color: #b8943f;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 6, 0, 0, 1);
+    -fx-background-color: linear-gradient(to bottom, #c49a3a, #b88d30);
+    -fx-effect: dropshadow(gaussian, rgba(212,168,67,0.5), 8, 0, 0, 2);
 }
 
 .btn-ghost {
     -fx-background-color: transparent;
-    -fx-border-color: #cbd5e0;
-    -fx-border-radius: 7;
-    -fx-background-radius: 7;
+    -fx-border-color: #d1ccc5;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
     -fx-text-fill: #4a5568;
-    -fx-padding: 8 18 8 18;
+    -fx-padding: 9 20 9 20;
     -fx-cursor: hand;
     -fx-font-size: 13px;
 }
 
 .btn-ghost:hover {
-    -fx-background-color: #e8edf5;
+    -fx-background-color: #f0ece4;
+    -fx-border-color: #d4a843;
 }
 
 /* ════════════════════════════════════════════════════════════════
@@ -289,14 +312,17 @@
 
 .toolbar {
     -fx-background-color: #ffffff;
-    -fx-background-radius: 8;
-    -fx-padding: 10 14 10 14;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 6, 0, 0, 1);
+    -fx-background-radius: 10;
+    -fx-padding: 12 16 12 16;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.07), 8, 0, 0, 2);
+    -fx-border-color: rgba(212,168,67,0.1);
+    -fx-border-radius: 10;
+    -fx-border-width: 1;
 }
 
 .check-toolbar {
     -fx-font-size: 13px;
-    -fx-text-fill: #2c3e6b;
+    -fx-text-fill: #162447;
 }
 
 /* ════════════════════════════════════════════════════════════════
@@ -305,29 +331,30 @@
 
 .table-styled {
     -fx-background-color: #ffffff;
-    -fx-background-radius: 8;
-    -fx-border-radius: 8;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.07), 8, 0, 0, 2);
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.09), 10, 0, 0, 3);
 }
 
 .table-styled .column-header-background {
-    -fx-background-color: #1a2744;
-    -fx-background-radius: 8 8 0 0;
+    -fx-background-color: linear-gradient(to right, #1b1b2f, #162447);
+    -fx-background-radius: 12 12 0 0;
 }
 
 .table-styled .column-header .label {
-    -fx-text-fill: #c9a84c;
+    -fx-text-fill: #d4a843;
     -fx-font-weight: bold;
     -fx-font-size: 12px;
-    -fx-padding: 10 8 10 8;
+    -fx-padding: 12 10 12 10;
+    -fx-letter-spacing: 0.5px;
 }
 
 .table-styled .table-row-cell {
-    -fx-border-color: transparent transparent #edf2f7 transparent;
+    -fx-border-color: transparent transparent #f0ece4 transparent;
 }
 
 .table-styled .table-row-cell:even {
-    -fx-background-color: #f8fafc;
+    -fx-background-color: #faf9f6;
 }
 
 .table-styled .table-row-cell:odd {
@@ -335,12 +362,12 @@
 }
 
 .table-styled .table-row-cell:selected {
-    -fx-background-color: #e8edf5;
-    -fx-text-fill: #1a2744;
+    -fx-background-color: #f0ece4;
+    -fx-text-fill: #1b1b2f;
 }
 
 .table-styled .table-row-cell:hover {
-    -fx-background-color: #eef2f8;
+    -fx-background-color: #f5f0e8;
 }
 
 .table-placeholder {
@@ -353,39 +380,45 @@
    ════════════════════════════════════════════════════════════════ */
 
 .package-card {
-    -fx-background-radius: 10;
-    -fx-padding: 16 18 16 18;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 8, 0, 0, 2);
+    -fx-background-radius: 14;
+    -fx-padding: 20 22 20 22;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 10, 0, 0, 3);
+    -fx-border-radius: 14;
+    -fx-border-width: 1;
 }
 
 .package-basic {
-    -fx-background-color: linear-gradient(to bottom right, #e8f5e9, #c8e6c9);
+    -fx-background-color: linear-gradient(to bottom right, #f0f9f0, #d4edda);
+    -fx-border-color: rgba(46,204,113,0.3);
 }
 
 .package-premium {
-    -fx-background-color: linear-gradient(to bottom right, #fff8e1, #ffecb3);
+    -fx-background-color: linear-gradient(to bottom right, #fdf8e8, #fce8a0);
+    -fx-border-color: rgba(212,168,67,0.4);
 }
 
 .package-luxury {
-    -fx-background-color: linear-gradient(to bottom right, #ede7f6, #d1c4e9);
+    -fx-background-color: linear-gradient(to bottom right, #f3eef8, #d8cce8);
+    -fx-border-color: rgba(142,68,173,0.3);
 }
 
 .pkg-title {
-    -fx-font-size: 15px;
+    -fx-font-size: 16px;
     -fx-font-weight: bold;
-    -fx-text-fill: #1a2744;
+    -fx-text-fill: #1b1b2f;
 }
 
 .pkg-desc {
     -fx-font-size: 12px;
     -fx-text-fill: #4a5568;
+    -fx-line-spacing: 2;
 }
 
 .pkg-cost {
-    -fx-font-size: 18px;
+    -fx-font-size: 20px;
     -fx-font-weight: bold;
-    -fx-text-fill: #1a2744;
-    -fx-padding: 4 0 0 0;
+    -fx-text-fill: #1b1b2f;
+    -fx-padding: 6 0 0 0;
 }
 
 /* ════════════════════════════════════════════════════════════════
@@ -404,25 +437,26 @@
 }
 
 .bill-total-label {
-    -fx-font-size: 14px;
+    -fx-font-size: 15px;
     -fx-font-weight: bold;
-    -fx-text-fill: #1a2744;
+    -fx-text-fill: #1b1b2f;
 }
 
 .bill-total-value {
-    -fx-font-size: 20px;
+    -fx-font-size: 22px;
     -fx-font-weight: bold;
-    -fx-text-fill: #c9a84c;
+    -fx-text-fill: #d4a843;
+    -fx-effect: dropshadow(gaussian, rgba(212,168,67,0.3), 4, 0, 0, 0);
 }
 
 .bill-textarea {
     -fx-font-family: "Courier New", Courier, monospace;
     -fx-font-size: 12px;
-    -fx-background-color: #1a2744;
-    -fx-text-fill: #c9a84c;
-    -fx-background-radius: 6;
-    -fx-border-radius: 6;
-    -fx-padding: 10;
+    -fx-background-color: #1b1b2f;
+    -fx-text-fill: #d4a843;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-padding: 14;
 }
 
 /* ════════════════════════════════════════════════════════════════
@@ -444,4 +478,24 @@
 .status-label {
     -fx-font-size: 13px;
     -fx-wrap-text: true;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   SCROLLBAR STYLING
+   ════════════════════════════════════════════════════════════════ */
+
+.scroll-bar:vertical .thumb,
+.scroll-bar:horizontal .thumb {
+    -fx-background-color: #d1ccc5;
+    -fx-background-radius: 8;
+}
+
+.scroll-bar:vertical .thumb:hover,
+.scroll-bar:horizontal .thumb:hover {
+    -fx-background-color: #d4a843;
+}
+
+.scroll-bar:vertical .track,
+.scroll-bar:horizontal .track {
+    -fx-background-color: #faf9f6;
 }

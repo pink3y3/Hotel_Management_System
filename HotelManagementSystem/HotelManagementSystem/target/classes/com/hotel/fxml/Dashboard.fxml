@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <!--
   Dashboard.fxml  —  Main window after login.
@@ -17,50 +22,57 @@
     fx:id="billingTab"  → billingTabController  (BillingController)
   The "Controller" suffix is appended automatically by FXML.
 -->
-<BorderPane xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.hotel.controller.DashboardController"
-            styleClass="dashboard-root">
+
+<BorderPane styleClass="dashboard-root" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hotel.controller.DashboardController">
 
     <!-- ── Top header bar ───────────────────────────────────────── -->
     <top>
-        <HBox styleClass="dashboard-header" alignment="CENTER_LEFT" spacing="12">
-            <padding><Insets top="12" right="24" bottom="12" left="24"/></padding>
-            <Label text="🏨" styleClass="header-icon"/>
-            <VBox>
-                <Label text="HORIZON HOTEL" styleClass="header-title"/>
-                <Label text="Management System" styleClass="header-sub"/>
+        <HBox alignment="CENTER_LEFT" spacing="12" style="-fx-background-color: #0a0a0a;" styleClass="dashboard-header">
+            <padding><Insets bottom="12" left="24" right="24" top="12" /></padding>
+            <Label styleClass="header-icon" text="♞" textFill="WHITE">
+            <font>
+               <Font size="20.0" />
+            </font></Label>
+            <VBox prefHeight="32.0" prefWidth="203.0">
+                <Label prefHeight="16.0" prefWidth="185.0" styleClass="header-title" text="THE STANLEY HOTEL" textFill="WHITE">
+               <font>
+                  <Font name="Bookman Old Style" size="12.0" />
+               </font></Label>
+                <Label styleClass="header-sub" text="Management System" textFill="WHITE">
+               <font>
+                  <Font name="Bookman Old Style" size="12.0" />
+               </font></Label>
             </VBox>
         </HBox>
     </top>
 
     <!-- ── Tab pane ─────────────────────────────────────────────── -->
     <center>
-        <TabPane fx:id="mainTabPane" tabClosingPolicy="UNAVAILABLE"
-                 styleClass="main-tab-pane">
+        <TabPane fx:id="mainTabPane" style="-fx-background-color: #f0f0f0;" styleClass="main-tab-pane" tabClosingPolicy="UNAVAILABLE">
 
             <!-- 0 — Rooms -->
             <Tab text="🛏  Rooms">
-                <fx:include fx:id="roomTab" source="RoomTab.fxml"/>
+                <fx:include fx:id="roomTab" source="RoomTab.fxml" />
             </Tab>
 
             <!-- 1 — Customers -->
             <Tab text="👤  Customers">
-                <fx:include fx:id="customerTab" source="CustomerTab.fxml"/>
+                <fx:include fx:id="customerTab" source="CustomerTab.fxml" />
             </Tab>
 
             <!-- 2 — Booking -->
             <Tab text="📋  Booking">
-                <fx:include fx:id="bookingTab" source="BookingTab.fxml"/>
+                <fx:include fx:id="bookingTab" source="BookingTab.fxml" />
             </Tab>
 
             <!-- 3 — Packages -->
             <Tab text="🎁  Packages">
-                <fx:include fx:id="packageTab" source="PackageTab.fxml"/>
+                <fx:include fx:id="packageTab" source="PackageTab.fxml" />
             </Tab>
 
             <!-- 4 — Billing -->
             <Tab text="💳  Billing">
-                <fx:include fx:id="billingTab" source="BillingTab.fxml"/>
+                <fx:include fx:id="billingTab" source="BillingTab.fxml" />
             </Tab>
 
         </TabPane>

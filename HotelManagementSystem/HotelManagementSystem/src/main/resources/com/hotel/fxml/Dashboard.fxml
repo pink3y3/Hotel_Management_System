@@ -23,19 +23,22 @@
   The "Controller" suffix is appended automatically by FXML.
 -->
 
-<BorderPane styleClass="dashboard-root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/25" fx:controller="com.hotel.controller.DashboardController">
+<BorderPane styleClass="dashboard-root" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hotel.controller.DashboardController">
 
     <!-- ── Top header bar ───────────────────────────────────────── -->
     <top>
-        <HBox alignment="CENTER_LEFT" spacing="12" styleClass="dashboard-header">
+        <HBox alignment="CENTER_LEFT" spacing="12" style="-fx-background-color: #0a0a0a;" styleClass="dashboard-header">
             <padding><Insets bottom="12" left="24" right="24" top="12" /></padding>
-            <Label styleClass="header-icon" text="🏨" />
+            <Label styleClass="header-icon" text="♞" textFill="WHITE">
+            <font>
+               <Font size="20.0" />
+            </font></Label>
             <VBox prefHeight="32.0" prefWidth="203.0">
-                <Label prefHeight="16.0" prefWidth="185.0" styleClass="header-title" text="THE STANLEY HOTEL">
+                <Label prefHeight="16.0" prefWidth="185.0" styleClass="header-title" text="THE STANLEY HOTEL" textFill="WHITE">
                <font>
                   <Font name="Bookman Old Style" size="12.0" />
                </font></Label>
-                <Label styleClass="header-sub" text="Management System">
+                <Label styleClass="header-sub" text="Management System" textFill="WHITE">
                <font>
                   <Font name="Bookman Old Style" size="12.0" />
                </font></Label>
@@ -45,7 +48,7 @@
 
     <!-- ── Tab pane ─────────────────────────────────────────────── -->
     <center>
-        <TabPane fx:id="mainTabPane" styleClass="main-tab-pane" tabClosingPolicy="UNAVAILABLE">
+        <TabPane fx:id="mainTabPane" style="-fx-background-color: #f0f0f0;" styleClass="main-tab-pane" tabClosingPolicy="UNAVAILABLE">
 
             <!-- 0 — Rooms -->
             <Tab text="🛏  Rooms">

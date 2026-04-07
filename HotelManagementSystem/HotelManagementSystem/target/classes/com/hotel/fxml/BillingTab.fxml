@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<!--
+  BillingTab.fxml  —  Billing tab content
+  Controller: BillingController
+-->
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.hotel.controller.BillingController"
+      styleClass="tab-content" spacing="16">
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+    <!-- ── Select Booking ────────────────────────────────────────── -->
+    <HBox styleClass="toolbar" spacing="12" alignment="CENTER_LEFT">
+        <Label text="Select Booking:" styleClass="field-label"/>
+        <ComboBox fx:id="billingBookingCombo" prefWidth="260" styleClass="combo-styled"/>
+        <Button text="↺ Refresh" onAction="#handleRefresh" styleClass="btn-ghost"/>
+    </HBox>
+
+    <!-- ── Bill Details + Print Area ─────────────────────────────── -->
+    <HBox spacing="16" VBox.vgrow="ALWAYS">
+
+        <!-- Left: structured details -->
+        <VBox styleClass="card" spacing="12" prefWidth="380" minWidth="320">
+            <Label text="Bill Details" styleClass="card-title"/>
+
+            <GridPane hgap="12" vgap="10">
+                <columnConstraints>
+                    <ColumnConstraints prefWidth="140"/>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                </columnConstraints>
+
+                <Label text="Booking ID"     styleClass="bill-label" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <Label fx:id="bookingIdLabel" text="—" styleClass="bill-value" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+                <Label text="Customer"       styleClass="bill-label" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <Label fx:id="customerLabel" text="—" styleClass="bill-value" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                <Label text="Room"           styleClass="bill-label" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <Label fx:id="roomLabel"     text="—" styleClass="bill-value" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+                <Label text="Nights"         styleClass="bill-label" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                <Label fx:id="nightsLabel"   text="—" styleClass="bill-value" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+                <Separator GridPane.columnIndex="0" GridPane.rowIndex="4" GridPane.columnSpan="2"/>
+
+                <Label text="Room Charges"       styleClass="bill-label" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+                <Label fx:id="roomChargesLabel"  text="—" styleClass="bill-value" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+
+                <Label text="Package Cost"       styleClass="bill-label" GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+                <Label fx:id="packageCostLabel"  text="—" styleClass="bill-value" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+
+                <Label text="Sub-Total"          styleClass="bill-label" GridPane.columnIndex="0" GridPane.rowIndex="7"/>
+                <Label fx:id="subTotalLabel"     text="—" styleClass="bill-value" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+
+                <Label text="Discount"           styleClass="bill-label" GridPane.columnIndex="0" GridPane.rowIndex="8"/>
+                <Label fx:id="discountLabel"     text="—" styleClass="bill-value" GridPane.columnIndex="1" GridPane.rowIndex="8"/>
+
+                <Separator GridPane.columnIndex="0" GridPane.rowIndex="9" GridPane.columnSpan="2"/>
+
+                <Label text="TOTAL PAYABLE"      styleClass="bill-total-label" GridPane.columnIndex="0" GridPane.rowIndex="10"/>
+                <Label fx:id="finalBillLabel"    text="—" styleClass="bill-total-value" GridPane.columnIndex="1" GridPane.rowIndex="10"/>
+            </GridPane>
+
+            <Label fx:id="birthdayNoteLabel" text="" styleClass="birthday-label"/>
+
+            <Separator/>
+
+            <!-- Actions -->
+            <HBox spacing="10">
+                <Button text="🖨  Print Bill"   onAction="#handlePrintBill"  styleClass="btn-secondary"/>
+                <Button fx:id="sendEmailButton"
+                        text="📧  Send E-Bill"  onAction="#handleSendEmail"  styleClass="btn-primary"/>
+            </HBox>
+
+            <Label fx:id="emailStatusLabel" text="" wrapText="true" styleClass="status-label"/>
+        </VBox>
+
+        <!-- Right: raw text preview -->
+        <VBox styleClass="card" spacing="8" HBox.hgrow="ALWAYS">
+            <Label text="Bill Preview" styleClass="card-title"/>
+            <TextArea fx:id="billTextArea"
+                      editable="false"
+                      styleClass="bill-textarea"
+                      VBox.vgrow="ALWAYS"
+                      wrapText="true"
+                      promptText="Select a booking to preview the bill…"/>
+        </VBox>
+
+    </HBox>
+</VBox>

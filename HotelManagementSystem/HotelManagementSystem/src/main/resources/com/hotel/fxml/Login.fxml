@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.hotel.controller.LoginController"
+      styleClass="login-root"
+      alignment="CENTER" spacing="0">
+
+    <!-- Header banner -->
+    <VBox styleClass="login-header" alignment="CENTER" spacing="4">
+        <Label text="🏨" styleClass="login-hotel-icon"/>
+        <Label text="HORIZON HOTEL" styleClass="login-title"/>
+        <Label text="Management System" styleClass="login-subtitle"/>
+    </VBox>
+
+    <!-- Card -->
+    <VBox styleClass="login-card" alignment="CENTER" spacing="18">
+        <padding><Insets top="32" right="40" bottom="32" left="40"/></padding>
+
+        <Label text="Admin Login" styleClass="login-card-title"/>
+
+        <VBox spacing="6">
+            <Label text="Username" styleClass="field-label"/>
+            <TextField fx:id="usernameField"
+                       promptText="Enter username"
+                       styleClass="text-field-styled"/>
+        </VBox>
+
+        <VBox spacing="6">
+            <Label text="Password" styleClass="field-label"/>
+            <PasswordField fx:id="passwordField"
+                           promptText="Enter password"
+                           styleClass="text-field-styled"/>
+        </VBox>
+
+        <HBox spacing="12" alignment="CENTER">
+            <Button text="Login" onAction="#handleLogin"
+                    styleClass="btn-primary" defaultButton="true"
+                    prefWidth="130"/>
+            <Button text="Clear" onAction="#handleClear"
+                    styleClass="btn-secondary"
+                    prefWidth="100"/>
+        </HBox>
+
+        <Label text="Default: admin / hotel123"
+               styleClass="login-hint"/>
+    </VBox>
+
+</VBox>

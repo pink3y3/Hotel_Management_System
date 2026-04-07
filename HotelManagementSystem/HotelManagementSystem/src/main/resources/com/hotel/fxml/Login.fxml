@@ -1,53 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.hotel.controller.LoginController"
-      styleClass="login-root"
-      alignment="CENTER" spacing="0">
+<VBox alignment="CENTER" spacing="0" styleClass="login-root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/25" fx:controller="com.hotel.controller.LoginController">
 
     <!-- Header banner -->
-    <VBox styleClass="login-header" alignment="CENTER" spacing="4">
-        <Label text="🏨" styleClass="login-hotel-icon"/>
-        <Label text="HORIZON HOTEL" styleClass="login-title"/>
-        <Label text="Management System" styleClass="login-subtitle"/>
+    <VBox alignment="CENTER" prefHeight="75.0" prefWidth="322.0" spacing="4" style="-fx-background-color: #6d5e5a;" styleClass="login-header">
+        <Label styleClass="login-hotel-icon" text="♞" textFill="WHITE" />
+        <Label prefHeight="17.0" prefWidth="136.0" styleClass="login-title" text="THE STANLEY HOTEL" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Bookman Old Style" size="12.0" />
+         </font></Label>
+        <Label prefHeight="16.0" prefWidth="124.0" styleClass="login-subtitle" text="Management System" textFill="WHITE">
+         <font>
+            <Font name="Bookman Old Style" size="12.0" />
+         </font></Label>
     </VBox>
 
     <!-- Card -->
-    <VBox styleClass="login-card" alignment="CENTER" spacing="18">
-        <padding><Insets top="32" right="40" bottom="32" left="40"/></padding>
+    <VBox alignment="CENTER" spacing="18" styleClass="login-card">
+        <padding><Insets bottom="32" left="40" right="40" top="32" /></padding>
 
-        <Label text="Admin Login" styleClass="login-card-title"/>
+        <Label styleClass="login-card-title" text="Admin Login">
+         <font>
+            <Font name="Bookman Old Style" size="12.0" />
+         </font></Label>
 
         <VBox spacing="6">
-            <Label text="Username" styleClass="field-label"/>
-            <TextField fx:id="usernameField"
-                       promptText="Enter username"
-                       styleClass="text-field-styled"/>
+            <Label styleClass="field-label" text="Username">
+            <font>
+               <Font name="Bookman Old Style" size="12.0" />
+            </font></Label>
+            <TextField fx:id="usernameField" promptText="Enter username" styleClass="text-field-styled" />
         </VBox>
 
         <VBox spacing="6">
-            <Label text="Password" styleClass="field-label"/>
-            <PasswordField fx:id="passwordField"
-                           promptText="Enter password"
-                           styleClass="text-field-styled"/>
+            <Label styleClass="field-label" text="Password">
+            <font>
+               <Font name="Bookman Old Style" size="12.0" />
+            </font></Label>
+            <PasswordField fx:id="passwordField" promptText="Enter password" styleClass="text-field-styled" />
         </VBox>
 
-        <HBox spacing="12" alignment="CENTER">
-            <Button text="Login" onAction="#handleLogin"
-                    styleClass="btn-primary" defaultButton="true"
-                    prefWidth="130"/>
-            <Button text="Clear" onAction="#handleClear"
-                    styleClass="btn-secondary"
-                    prefWidth="100"/>
+        <HBox alignment="CENTER" spacing="12">
+            <Button defaultButton="true" onAction="#handleLogin" prefWidth="130" style="-fx-background-color: #6d5e5a;" styleClass="btn-primary" text="Login" textFill="WHITE" />
+            <Button onAction="#handleClear" prefWidth="100" styleClass="btn-secondary" text="Clear" />
         </HBox>
 
-        <Label text="Default: admin / hotel123"
-               styleClass="login-hint"/>
+        <Label styleClass="login-hint" text="Default: admin / hotel123" />
     </VBox>
 
 </VBox>

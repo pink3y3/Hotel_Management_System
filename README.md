@@ -104,19 +104,8 @@ mvn javafx:run
 ## 📦 Data Storage
 
 - Uses in-memory storage via `HotelDataManager`
-- (Optional) Can be extended to use a real database (MySQL/PostgreSQL)
 
----
 
-## 🔮 Future Improvements
-
-- Integrate database (MySQL/PostgreSQL)
-- Add multiple user roles (Admin/Staff)
-- Online booking system
-- Payment gateway integration
-- Analytics dashboard
-
----
 
 ## 👩‍💻 Author
 
